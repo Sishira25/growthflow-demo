@@ -1,0 +1,19 @@
+# Render Blueprint: public synthetic GrowthFlow demo only.
+# Static hosting means no live CRM tokens, backend, or personal data are deployed.
+services:
+  - type: web
+    name: growthflow-portfolio-demo
+    runtime: static
+    buildCommand: echo "GrowthFlow v1.3 public reviewer preview prebuilt public demo"
+    staticPublishPath: site
+    autoDeployTrigger: commit
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: no-referrer
+      - path: /*
+        name: X-Frame-Options
+        value: DENY

@@ -1,0 +1,938 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#064e3b"><title>GrowthFlow · Commercial Development</title><meta name="description" content="B2B account development, assumption challenges and explainable commercial decision briefs. Sample-data demonstration."><style>
+:root{color-scheme:light;--navy:#064532;--navy2:#145A42;--ink:#193C30;--muted:#667D73;--line:#E0EDE4;--soft:#F4FAF6;--white:#fff;--teal:#047857;--teal-light:#ECFDF5;--amber:#b67b20;--amber-light:#fff6e9;--red:#bf5d50;--red-light:#fef0ed;--blue:#047857;--shadow:0 8px 28px rgba(24,44,68,.06)}
+*{box-sizing:border-box}body{margin:0;background:#F7FAF8;color:var(--ink);font:14px/1.5 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #34D399;outline-offset:2px}a{color:inherit}.app{display:flex;min-height:100vh}.sidebar{width:250px;flex:0 0 250px;background:#064531;color:#E4F4E9;padding:28px 17px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}.brand{display:flex;gap:11px;align-items:center;margin:3px 12px 37px}.brandmark{height:38px;width:38px;display:grid;place-items:center;background:linear-gradient(135deg,#10B981,#047857);color:white;border-radius:11px;font-size:18px;font-weight:800}.brandtitle{font-size:18px;font-weight:800;color:white;letter-spacing:-.6px}.brandsub{font-size:11px;color:#ACD6C1;letter-spacing:.2px}.sidenav-label{font-size:10px;text-transform:uppercase;color:#98BFA7;letter-spacing:1.6px;padding:0 14px;margin-bottom:12px;font-weight:800}.navbtn{border:0;background:transparent;color:#CBE8D6;border-radius:9px;padding:12px 14px;width:100%;text-align:left;display:flex;gap:12px;align-items:center;font-weight:580;margin:3px 0}.navbtn:hover{background:#135C43;color:white}.navbtn.active{background:#096B4D;color:white;box-shadow:inset 3px 0 #6EE7B7}.navbtn svg,.small-icon svg{width:17px;height:17px}.navbtn.active svg{color:#A7F3D0}.sidebar-bottom{margin-top:auto;padding:14px 12px 0;border-top:1px solid #39715A}.sidebar-bottom .tiny{color:#A3CDB9}.sidestat{display:flex;gap:7px;align-items:center;font-size:12px;color:#D6EFDF}.statusdot{width:7px;height:7px;border-radius:50%;background:#6EE7B7}.sidebar-bottom p{font-size:11px;color:#AACABA;margin-bottom:0}.main{flex:1;min-width:0}.topbar{min-height:73px;background:#fff;border-bottom:1px solid var(--line);padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:12px}.breadcrumb{font-size:12px;color:#667E73}.top-right{display:flex;align-items:center;gap:14px}.demo-pill{font-weight:700;letter-spacing:.3px;font-size:10px;color:#065F46;background:#ECFDF5;border:1px solid #A7F3D0;padding:5px 10px;border-radius:100px}.tiny{font-size:12px;color:var(--muted)}.content{padding:35px 40px 70px;max-width:1530px;margin:auto}.page{display:none}.page.active{display:block}.headline{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:27px}.eyebrow{font-size:11px;letter-spacing:1.6px;color:var(--teal);text-transform:uppercase;font-weight:800;margin-bottom:7px}.headline h1{font-size:29px;letter-spacing:-1.1px;line-height:1.15;margin:0;color:var(--navy)}.subtitle{color:var(--muted);margin:9px 0 0;max-width:720px}.btn{border:1px solid var(--line);padding:10px 14px;background:white;color:var(--ink);border-radius:9px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}.btn:hover{background:#f5f9fb}.btn-primary{background:var(--teal);border-color:var(--teal);color:#fff}.btn-primary:hover{background:#065F46}.btn-dark{background:var(--navy);border-color:var(--navy);color:white}.btn-dark:hover{background:#07533B}.btn-sm{font-size:12px;padding:7px 10px}.btn:disabled{opacity:.5;cursor:not-allowed}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:19px}.card{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}.metric{padding:20px 21px;position:relative;overflow:hidden}.metric-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.metric-label{color:#6C8276;font-size:12px;font-weight:600}.metric-icon{display:grid;place-items:center;background:#ECFDF5;color:#047857;border-radius:9px;width:33px;height:33px}.metric-icon svg{width:17px;height:17px}.metric-value{font-size:29px;letter-spacing:-1px;line-height:1.2;font-weight:790;margin-top:12px;color:#124B37}.metric-note{margin-top:4px;font-size:11px;color:#71877B}.grid-two{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:18px}.panel{padding:22px 24px}.panel-header{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:21px}.panel h2,.panel-header h2{font-size:16px;letter-spacing:-.35px;color:#064532;line-height:1.2;margin:0}.panel-note{font-size:12px;color:#74897C;margin:6px 0 0}.textlink{background:none;border:0;padding:0;font-size:12px;font-weight:750;color:var(--teal)}.tablewrap{overflow:auto;max-width:100%}table{border-collapse:collapse;width:100%;text-align:left}th{font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:#789184;background:#F5FAF6}th,td{padding:13px 12px;border-bottom:1px solid #E5F1E9;white-space:nowrap}tr:last-child td{border-bottom:0}td{font-size:12px}td strong{font-weight:750;color:#214536;font-size:12px}tr.data-row{cursor:pointer}tr.data-row:hover{background:#F1FBF5}tr.data-row.selected{background:#E4F8EC}th:first-child,td:first-child{padding-left:4px}.muted{color:var(--muted)}.badge{display:inline-block;border-radius:6px;padding:4px 8px;font-size:10px;font-weight:800;letter-spacing:.2px;white-space:nowrap}.badge.p1{color:#b25746;background:#ffede9}.badge.p2{color:#997119;background:#fff4d9}.badge.p3{color:#047857;background:#E3F7E9}.badge.review{color:#697788;background:#eef2f6}.badge.exclude{color:#9e5a5b;background:#fbeded}.badge.archived{color:#697788;background:#eef2f6}.fitnum{font-weight:800;font-size:13px;color:#155239}.fitprovisional{font-size:10px;color:#986C24}.inline-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;margin-right:5px}.banner-dark{background:linear-gradient(120deg,#064531,#047857);border:0;color:white;padding:25px 28px;display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:20px}.banner-dark h2{font-size:18px;margin:0 0 8px;letter-spacing:-.3px}.banner-dark p{color:#CCEEDD;font-size:12px;margin:0;max-width:640px}.banner-dark .btn{border-color:#6EE7B7;color:#fff;background:#086C51}.banner-dark .btn:hover{background:#0A835D}.insight-list{display:flex;flex-direction:column;gap:13px}.insight{display:flex;gap:11px;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid #E5F1E9}.insight:last-child{border:0;padding-bottom:0}.insight-icon{flex:0 0 31px;width:31px;height:31px;border-radius:8px;display:grid;place-items:center;background:#EDF7F0;color:#5D8A70}.insight-icon svg{width:16px;height:16px}.insight-title{font-size:12px;font-weight:750;margin-bottom:3px}.insight-copy{font-size:11px;color:var(--muted);line-height:1.5}.mt18{margin-top:18px}.micro{font-size:11px;color:#91a0ad}.note-box{background:#f7fafb;border:1px solid #e4edf1;padding:13px 15px;border-radius:9px;color:#637789;font-size:12px}.layout-controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.input{border:1px solid #dbe5ea;background:white;padding:9px 11px;border-radius:8px;color:#234F38;min-width:0}.input.search{width:min(310px,100%)}.input-select{border:1px solid #dbe5ea;padding:9px 12px;border-radius:8px;background:white;color:var(--ink)}.toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:15px}.count-label{font-size:12px;color:#8394a2}.account-grid{display:grid;grid-template-columns:1fr;gap:14px}.account-row{padding:16px 20px;display:flex;align-items:center;gap:15px;cursor:pointer;border:1px solid var(--line);border-radius:12px;background:white;text-align:left;width:100%}.account-row:hover{border-color:#6BBB96;box-shadow:var(--shadow)}.acct-avatar{width:38px;height:38px;border-radius:10px;background:#E6FAED;color:#047857;font-weight:800;display:grid;place-items:center;flex:0 0 auto}.account-primary{flex:1;min-width:0}.account-primary strong{display:block;font-size:13px}.account-primary .tiny{display:block}.account-meta{text-align:right;min-width:145px}.account-meta .tiny{display:block;margin-top:4px}.section-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:800;color:#6A8374;margin:15px 0 10px}.plan-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px}.control-card{padding:23px 25px}.range{width:100%;accent-color:var(--teal)}.range-labels{display:flex;justify-content:space-between;font-size:11px;color:#74897C;margin-top:4px}.radio-segment{display:flex;background:#EEF8F0;border-radius:10px;padding:4px;gap:3px}.seg-opt{flex:1;background:transparent;border:0;border-radius:7px;padding:10px 13px;font-weight:750;color:#587364;font-size:12px}.seg-opt.active{background:#fff;color:#047857;box-shadow:0 2px 7px #123D2B15}.capacity-number{font-size:27px;letter-spacing:-1px;font-weight:790;color:var(--navy)}.progress-track{height:9px;border-radius:20px;background:#edf2f4;overflow:hidden}.progress-fill{height:100%;border-radius:20px;background:var(--teal);transition:width .2s}.statline{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:6px 0}.statline strong{color:#20513B}.section-subtitle{font-size:12px;color:#718678;margin:7px 0 0}.plan-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #E5F1E9}.plan-item:last-child{border-bottom:0}.plan-circle{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#DCFCE7;color:#047857;flex:0 0 auto;font-size:13px;font-weight:800}.plan-circle.deferred{background:#f1f3f5;color:#a9b4bf}.plan-item-body{flex:1;min-width:0}.plan-item-body strong{font-size:12px;display:block}.plan-item-body span{font-size:11px;color:#93a0ac;display:block;white-space:normal}.plan-item-hours{font-weight:800;font-size:12px;color:#526B5E}.warning{border:1px solid #f0d4b2;background:#fff8ed;color:#875c23;padding:14px 15px;border-radius:10px;font-size:12px;display:flex;gap:10px;align-items:flex-start}.warning strong{color:#855418}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:10px}.compare-card{padding:15px;border-radius:10px;border:1px solid #E0EDE4;background:#fff}.compare-card.chosen{border-color:#6EC39A;background:#F2FCF5}.compare-label{font-size:12px;font-weight:800}.compare-number{font-size:23px;font-weight:800;color:var(--navy);margin:6px 0}.compare-note{font-size:11px;color:#6C8576}.logs{display:flex;flex-direction:column;gap:13px}.logitem{background:white;border:1px solid var(--line);padding:17px 20px;border-radius:10px}.log-head{display:flex;gap:10px;justify-content:space-between;align-items:start}.logitem strong{font-size:13px}.logitem p{font-size:12px;color:#7d8d9d;margin:8px 0 0}.drawer-wrap{position:fixed;inset:0;display:none;z-index:30}.drawer-wrap.open{display:block}.veil{position:absolute;inset:0;background:rgba(17,33,50,.42);border:0;width:100%;height:100%}.drawer{position:absolute;right:0;top:0;bottom:0;width:min(510px,100vw);background:white;padding:30px;overflow:auto;box-shadow:-14px 0 55px #1122362a}.drawer-head{display:flex;justify-content:space-between;gap:8px;align-items:start}.drawer h2{font-size:23px;letter-spacing:-.6px;line-height:1.2;margin:6px 0 8px}.drawer h3{font-size:13px;margin:23px 0 12px;color:#283d51}.closebtn{border:1px solid var(--line);background:white;border-radius:8px;padding:7px 10px;font-weight:800}.separator{height:1px;background:var(--line);margin:20px 0}.dimrow{margin:12px 0}.dimhead{display:flex;justify-content:space-between;font-size:12px;gap:12px;margin-bottom:6px}.dimhead span:last-child{font-weight:800;color:#3B6750}.dimtrack{height:6px;background:#E7F3E9;border-radius:9px;overflow:hidden}.dimfill{height:100%;background:#10B981;border-radius:9px}.evidence{padding:11px 0;border-bottom:1px solid #E5F1E9}.evidence strong{display:block;font-size:11px;color:#285F45;margin-bottom:3px}.evidence p{font-size:12px;color:#577165;margin:0 0 5px}.evidence .micro{font-size:10px}.drawer-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.fact{padding:13px;background:#F2FAF5;border-radius:9px}.fact strong{display:block;margin-top:5px;font-size:13px;color:#145239}.whatif{background:#f5f9fb;border:1px solid #e2ebef;padding:16px;border-radius:11px}.whatif .fields{display:grid;grid-template-columns:1fr 1fr;gap:9px}.whatif label{display:block;font-size:11px;font-weight:750;color:#51775E;margin-bottom:5px}.whatif select,.whatif input{width:100%}.whatif .btn{margin-top:12px}.toast{position:fixed;right:30px;bottom:25px;background:#064532;color:white;padding:11px 16px;border-radius:9px;box-shadow:0 8px 40px #06453244;z-index:40;font-size:12px;display:none}.toast.open{display:block}.empty{padding:40px;text-align:center;color:var(--muted);font-size:13px}.tiny-legend{display:flex;gap:13px;flex-wrap:wrap;font-size:11px;color:#5E7E69}.tiny-legend span{display:flex;gap:6px;align-items:center}.hero-title{display:flex;align-items:center;gap:9px}.tour{font-size:12px;color:#567962;line-height:1.6}.tour li{margin:8px 0}.screenreader{position:absolute!important;left:-100000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+@media(max-width:1100px){.sidebar{width:205px;flex-basis:205px}.topbar{padding:0 24px}.content{padding:28px 24px 60px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-two,.plan-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.app{display:block}.sidebar{position:relative;width:100%;height:auto;padding:13px 16px 8px;display:block}.brand{margin:0 0 10px}.brandsub,.sidebar-bottom,.sidenav-label{display:none}.sidenav{display:flex;gap:3px;overflow-x:auto}.navbtn{width:auto;min-width:max-content;font-size:11px;padding:9px 10px}.navbtn svg{width:13px;height:13px}.topbar{min-height:53px;padding:0 17px}.top-right .tiny{display:none}.content{padding:23px 16px 50px}.headline{align-items:start;flex-direction:column}.headline h1{font-size:25px}.metric-grid{gap:9px}.metric{padding:15px}.metric-value{font-size:25px}.metric-label{font-size:11px}.panel{padding:18px}.banner-dark{display:block;padding:21px}.banner-dark .btn{margin-top:15px}.grid-two,.plan-grid{gap:13px}.account-meta{min-width:82px}.account-row{padding:12px}.drawer{padding:22px}.comparison{grid-template-columns:1fr 1fr}.whatif .fields{grid-template-columns:1fr}.toolbar{align-items:stretch;flex-direction:column}.toolbar .input.search{width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Keep priority chips compact inside action descriptions. */
+.plan-item-body .badge{display:inline-block;vertical-align:middle;margin-left:5px}
+@media(max-width:700px){.grid-two,.plan-grid{grid-template-columns:minmax(0,1fr)}.grid-two>* , .plan-grid>*{min-width:0}.panel-header{flex-wrap:wrap}}
+/* Stage 4: visible evidence provenance, integration status and recruiter tour */
+[hidden]{display:none!important}.headline-actions{display:flex;gap:10px;flex-wrap:wrap}.source-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:1px solid #CFF0DD;background:#F0FDF4;padding:12px 16px;border-radius:11px;margin-bottom:20px;color:#166044;font-size:12px}.source-strip .statusdot{background:#10B981}.source-strip button{margin-left:auto}.evidence-card{padding:15px 0;border-bottom:1px solid #E0EDE4}.evidence-card:last-of-type{border-bottom:0}.evidence-link{padding:10px 12px;border-radius:8px;background:#F1FAF4;margin-top:9px;color:#4B6C5A;font-size:11px;overflow-wrap:anywhere}.evidence-link strong{color:#17573E}.evidence-link p{margin:5px 0 0;font-size:12px;line-height:1.5;color:#345C46}.research-gap{font-size:12px;margin-top:8px;padding:10px;background:#fff6e9;border-radius:7px;color:#966821}.reason-input{display:block;width:100%;margin:5px 0 12px}.whatif>label{font-size:12px;font-weight:650;display:block}.plan-button{border:0;background:transparent;width:100%;text-align:left;cursor:pointer}.plan-button:hover{background:#EAF8EE;border-radius:8px}.plan-item-body small{display:block;font-size:11px;color:#8C6D37;margin-top:3px}.bridge-fact{padding:13px 0;display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #E0ECE4;font-size:12px}.bridge-fact strong{text-align:right;max-width:60%;font-weight:650}.tour-float{position:fixed;z-index:200;right:24px;bottom:24px;width:min(395px,calc(100vw - 32px));background:#fff;border:1px solid #BFE8CD;box-shadow:0 20px 65px #06453250;border-radius:14px;padding:21px;color:#193C30}.tour-float .tour-title{font-weight:750;color:#047857;letter-spacing:1.2px;font-size:10px;margin-bottom:7px}.tour-float>strong{font-size:17px}.tour-float p{line-height:1.55;color:#62806C}.tour-controls{display:flex;gap:8px;justify-content:flex-end}.sidebar .navbtn{font-size:12px}.app button{text-decoration:none}.badge.archived{background:#eef2f6;color:#6a7683}.badge.exclude{background:#f2eded;color:#925f61}
+@media(max-width:700px){.headline-actions{width:100%}.headline-actions button{flex:1}.source-strip button{margin-left:0}.tour-float{right:16px;bottom:16px;max-height:42vh;overflow:auto}.bridge-fact{flex-direction:column;gap:3px}.bridge-fact strong{text-align:left;max-width:100%}.sidenav{scrollbar-width:thin}}
+
+/* Stage 5 · Emerald design system; never compete with OpsFlow's blue identity. */
+:root{--emerald-950:#064532;--emerald-800:#065F46;--emerald-700:#047857;--emerald-500:#10B981;--mint-50:#ECFDF5;--ink:#193C30;--line:#DEEAE2;--shadow:0 8px 28px rgba(6,69,50,.065)}
+.brandmark{background:linear-gradient(145deg,#10B981,#047857)}
+.btn-primary{background:#047857;border-color:#047857;color:#fff}
+.btn-primary:hover{background:#065F46}
+.banner-dark{background:linear-gradient(115deg,#064532,#065F46)}
+.banner-dark .btn{background:#0A7A57;border-color:#79DDB3}
+.seg-opt.active{color:#065F46}
+.source-strip{background:#ECFDF5;border-color:#C6EFD8}
+.account-row:hover{border-color:#6FC79C}
+.account-row:focus-visible,.navbtn:focus-visible,.btn:focus-visible{outline:3px solid #34D399;outline-offset:2px}
+.stress-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stress-card{padding:17px;border:1px solid #CFECDD;background:#F3FBF6;border-radius:10px;display:flex;flex-direction:column;gap:3px}
+.stress-card strong{font-size:27px;line-height:1.3;color:#064532}
+.stress-card span{font-size:12px;color:#557764}
+.plan-item-hours small{display:block;font-size:9px;font-weight:500;color:#6C8576}
+@media(max-width:480px){.stress-grid{grid-template-columns:1fr}.brandtitle{letter-spacing:-.3px}}
+/* Prevent connector notice controls from exceeding compact phones. */
+#sync-button{max-width:100%;white-space:normal;text-align:center;overflow-wrap:anywhere}
+
+/* Stage 6 · The account strategy lab emphasizes evidence and commercial judgment. */
+.thesis-intro{padding:25px 27px;display:flex;justify-content:space-between;align-items:center;gap:25px;background:linear-gradient(113deg,#064532,#087451);border-radius:16px;color:white;margin-bottom:17px}
+.thesis-intro .eyebrow{color:#96E9BD}.thesis-intro h2{font-size:24px;line-height:1.25;letter-spacing:-.7px;margin:4px 0 8px;max-width:580px}.thesis-sub{color:#C8F0D8;font-size:12px}.thesis-intro-right{min-width:275px;max-width:100%;display:flex;flex-direction:column;gap:7px}.thesis-intro-right .thesis-label{color:#D5F1DF;margin:0}.thesis-intro-right .input-select{width:100%;background:#fff;color:#064532}.thesis-rec{font-size:11px;color:#D0F1DA;padding-top:2px}.thesis-signals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:0 0 17px}.thesis-signal{border:1px solid #D7E9DE;border-radius:11px;background:white;padding:14px 18px;display:flex;align-items:center;gap:14px;min-width:0}.thesis-signal strong{font-size:25px;color:#065F46}.thesis-signal small{font-size:12px;color:#567966}.thesis-columns{display:grid;grid-template-columns:1.18fr 1fr;gap:18px;margin-bottom:18px}.thesis-panel{min-width:0}.thesis-evidence{padding:14px 15px;border-radius:11px;border:1px solid #E1EAE3;margin-bottom:10px;background:#FAFCFA}.thesis-evidence.supports{border-left:3px solid #10B981}.thesis-evidence.challenges{border-left:3px solid #D58C26;background:#FFFCF6}.thesis-evidence.unresolved{border-left:3px solid #9AA99D}.thesis-evidence-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;font-size:10px;font-weight:650;color:#617C6B}.thesis-chip{background:#ECF5EF;color:#305E46;border-radius:40px;padding:3px 8px}.thesis-evidence-text{margin:9px 0;font-size:13px;line-height:1.55}.thesis-evidence-bottom{display:flex;align-items:center;gap:9px;justify-content:space-between;flex-wrap:wrap}.thesis-stance{font-size:10px;color:#5D7565;font-weight:700}.thesis-toggle{display:flex;flex-wrap:wrap;gap:3px}.thesis-choice{border:1px solid #D9E9DF;background:#fff;padding:5px 7px;border-radius:6px;font-size:10px;color:#587264}.thesis-choice.active{background:#08694D;border-color:#08694D;color:#fff}.thesis-label{font-size:12px;color:#315A45;font-weight:750;display:block;margin:12px 0 6px}.thesis-edit{width:100%;border:1px solid #D6E7DC;color:#244332;border-radius:8px;padding:12px;resize:vertical;line-height:1.55;font-size:12px;background:#FFF}.thesis-hint{font-size:10px;color:#6D8978;margin:4px 0 13px}.thesis-buyer{display:flex;align-items:flex-start;flex-wrap:wrap;justify-content:space-between;gap:7px;padding:13px;border:1px solid #E1EEE5;border-radius:9px;margin:8px 0}.thesis-buyer strong{font-size:12px}.thesis-buyer span{font-size:11px;color:#345F48}.thesis-buyer small{font-size:10px;color:#798F81}.thesis-minor{font-size:12px;margin:19px 0 9px}.thesis-questions{padding-left:21px;color:#42664F;font-size:12px;line-height:1.7}.thesis-questions li{margin:7px 0}.thesis-gap{border:1px solid #F1DDBF;background:#FFF9EF;color:#885D24;font-size:12px;margin:7px 0;padding:9px 11px;border-radius:8px}.thesis-pass{background:#F0FBF4;border:1px solid #C7ECD5;padding:12px;border-radius:9px;font-size:12px;color:#166044}.thesis-decision{width:100%;margin:3px 0 12px}.thesis-outcome{padding:14px;background:#F2FAF5;border:1px solid #D2EBDC;border-radius:10px;margin:0 0 13px}.thesis-outcome strong{color:#0C654A}.thesis-outcome p{font-size:12px;margin:6px 0 0;color:#4B6756}.thesis-prohibition{display:block;color:#B04D2D;font-size:11px;margin-top:8px}.thesis-intro-right .input-select{max-width:100%}
+@media(max-width:1100px){.thesis-columns{grid-template-columns:1fr}}@media(max-width:700px){.thesis-intro{flex-direction:column;align-items:stretch;padding:20px}.thesis-intro-right{min-width:0}.thesis-signals{gap:7px}.thesis-signal{padding:10px;display:block}.thesis-signal strong{font-size:20px}.thesis-signal small{display:block;font-size:10px}.thesis-evidence-bottom{align-items:flex-start}}
+
+/* v0.5: commercial application data presentation */
+.commercial-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin:0 0 17px;padding:0;overflow:hidden}
+.commercial-fact{padding:15px 16px;border-right:1px solid var(--line);min-width:0}
+.commercial-fact:last-child{border-right:0}
+.commercial-fact small{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#688274;font-weight:700;display:block;margin-bottom:5px}
+.commercial-fact strong{font-size:12px;font-weight:750;overflow-wrap:anywhere;display:block}
+.thesis-event{margin:0 0 17px}
+.event-card{background:#F1FBF5;border:1px solid #C8EADB;border-radius:11px;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.event-card small{display:block;color:#217653;font-size:10px;font-weight:750;letter-spacing:.65px}
+.event-card strong{display:block;margin-top:3px;font-size:14px}
+.event-card p{font-size:12px;color:#587663;margin:4px 0 0}
+.event-ready{color:#146C49;font-size:11px;font-weight:750;white-space:nowrap}
+.thesis-source-label{color:#64796C;font-size:10px;overflow-wrap:anywhere}
+.thesis-evidence-meta span:first-child{overflow-wrap:anywhere}
+@media(max-width:1250px){.commercial-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.commercial-fact:nth-child(3){border-right:0}.commercial-fact:nth-child(n+4){border-top:1px solid var(--line)}}
+@media(max-width:650px){.commercial-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.commercial-fact:nth-child(3){border-right:1px solid var(--line)}.commercial-fact:nth-child(2n){border-right:0}.commercial-fact:nth-child(n+3){border-top:1px solid var(--line)}.event-card{flex-direction:column;align-items:stretch}.event-card .btn{width:100%}}
+
+/* v0.6: CRM mapping contract review */
+.crm-preview-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:12px 0 18px}.crm-preview-controls label{font-size:12px;font-weight:750;color:#345e48}.crm-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;min-width:0}.crm-preview-grid>div{min-width:0}.crm-code{padding:18px;border-radius:10px;background:#102a21;color:#e3f9ec;font:11px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;word-break:break-word;max-height:390px;overflow:auto}.crm-mapped{background:#f5faf7;border:1px solid #deeee2;border-radius:10px;padding:14px}.crm-fact{padding:9px 3px;border-bottom:1px solid #deeee2;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}.crm-fact:last-child{border:0}.crm-fact span{font-size:12px;color:#5e7b6b}.crm-fact strong{font-size:12px;max-width:65%;overflow-wrap:anywhere;text-align:right}.crm-caution{background:#fff6e9;border:1px solid #eddbb5;border-radius:8px;padding:11px 13px;color:#765b26;font-size:12px;margin-top:10px}@media(max-width:850px){.crm-preview-grid{grid-template-columns:1fr}}
+/* GrowthFlow v0.7: connected commercial account case */
+.case-hero{background:linear-gradient(110deg,#064532,#086546);border-radius:16px;padding:26px 30px;margin-bottom:16px;color:#fff;display:flex;gap:26px;align-items:center;justify-content:space-between}
+.case-eyebrow{font-size:10px;font-weight:800;letter-spacing:1.4px;color:#A9EAC5}.case-hero-divider{margin:0 7px;opacity:.6}
+.case-hero h2{font-size:27px;letter-spacing:-.8px;margin:8px 0 3px;line-height:1.2}.case-hero p{font-size:12px;color:#C0E8D0;margin:4px 0 14px}
+.case-hero-main{min-width:0}.case-hero-select{max-width:100%;min-width:270px}.case-hero-select label{display:block;color:#DCF6E8;font-size:12px;font-weight:700;margin-bottom:7px}.case-hero-select select{width:100%;font-weight:650}.case-hero-select small{display:block;color:#ACDBBF;font-size:11px;margin-top:7px}
+.case-reco{display:inline-flex;align-items:center;border-radius:22px;padding:5px 11px;background:#ECFDF5;color:#04664A;font-size:11px;font-weight:850}.case-reco.hold{background:#FFF0D7;color:#924B13}.case-reco.validate{background:#FDF4DE;color:#7F5D19}.case-reco.research{background:#E6F3EC;color:#23644A}.case-reco.advance{background:#D1FAE5;color:#075C43}
+.case-facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-bottom:15px;padding:14px 7px}.case-facts>div{padding:5px 16px;border-right:1px solid var(--line);min-width:0}.case-facts>div:last-child{border:0}.case-facts small{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:#688274;display:block}.case-facts strong{font-size:12px;color:#144E37;display:block;margin-top:5px;overflow-wrap:anywhere}
+.case-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:18px}.case-metric{background:#fff;border:1px solid var(--line);border-radius:11px;padding:17px 20px}.case-metric small{display:block;font-weight:700;color:#6E8879;font-size:11px}.case-metric strong{display:block;font-size:26px;color:#064532;line-height:1.4}.case-metric span{color:#849589;font-size:11px}
+.case-columns{display:grid;grid-template-columns:1.16fr 1fr;gap:17px;margin-bottom:18px}.case-columns>.panel{min-width:0}
+.case-field{padding:12px 0;border-bottom:1px solid #ECF3EE}.case-field:last-child{border:0}.case-field small{display:block;color:#4F7761;font-size:10px;text-transform:uppercase;font-weight:750;letter-spacing:.5px}.case-field p{font-size:13px;line-height:1.65;margin:5px 0 0}.case-person{border:1px solid #DCEBE1;border-radius:9px;padding:11px 13px;margin:8px 0;display:grid;grid-template-columns:1fr 1fr;gap:3px 12px}.case-person strong{font-size:12px}.case-person span{font-size:11px;color:#39664C;text-align:right}.case-person small{grid-column:1/-1;font-size:10px;color:#688575}.case-small-heading{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#547763;font-weight:850;margin:21px 0 10px}.case-evidence-panel{margin-bottom:18px}
+.case-timeline{position:relative;padding:2px 0 5px}.case-event{display:flex;align-items:stretch;gap:14px;position:relative;padding-bottom:17px}.case-event:not(:last-child):before{content:"";position:absolute;left:7px;top:16px;bottom:-4px;width:2px;background:#DAECE0}.case-event-dot{width:16px;height:16px;flex:0 0 16px;border:4px solid #B7E6CB;border-radius:50%;background:#047857;position:relative;z-index:1;margin-top:10px}.case-event.blocked .case-event-dot{background:#B45F28;border-color:#F4D8B7}.case-event.resolved .case-event-dot{background:#647E6C;border-color:#D8E5DD}.case-event-body{min-width:0;flex:1;padding:13px 16px;background:#FBFDFB;border:1px solid #DEEBE2;border-radius:10px}.case-event-meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-size:10px;color:#637F6D}.case-event-meta b{color:#235F43}.case-event-meta span{background:#E7F5EC;padding:3px 8px;border-radius:20px}.case-event-desc{font-size:12px;line-height:1.6}.case-event-footer{margin-top:9px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;color:#607C6A;font-size:10px}.case-event-footer code{font-size:10px;color:#2C6C4A;overflow-wrap:anywhere}
+.case-update{background:#F0FAF4;border:1px solid #CBEBDA;border-radius:11px;margin-top:5px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}.case-update strong{font-size:13px}.case-update p{margin:5px 0 0;font-size:12px;color:#537362}.case-update-action{display:flex;align-items:flex-end;flex-direction:column;gap:5px;flex:0 0 auto}.case-update-action small{font-size:10px;color:#61806D;max-width:210px;text-align:right}.case-event-complete{font-size:11px;font-weight:750;color:#1B7451}
+.case-reason{font-size:13px;line-height:1.6;padding:13px 15px;background:#ECF9F1;border-left:3px solid #059669;border-radius:7px}.case-bullet{display:flex;gap:9px;align-items:flex-start;padding:7px 0;font-size:12px;border-bottom:1px solid #EEF3EF}.case-bullet-icon{color:#AD6A23;font-size:12px;font-weight:900}.case-safe{margin-top:10px;background:#F0FAF4;padding:11px;font-size:12px;border-radius:8px;color:#186343}.case-control{width:100%}.case-buttons{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.case-feedback{padding:11px 13px;border:1px solid #BFE5CF;background:#F0FBF5;border-radius:8px;margin:10px 0}.case-feedback.blocked{background:#FFF4EF;border-color:#F3C6B3}.case-feedback.cautious{background:#FFF9EF;border-color:#F0DCA7}.case-feedback strong{font-size:12px}.case-feedback p{font-size:12px;margin:5px 0 0;line-height:1.6}.case-saved{margin-top:12px;font-size:12px;color:#225E41;border-top:1px solid #DFEBE2;padding-top:10px}.case-saved small{display:block;margin-top:4px;color:#678372;font-size:11px}.case-before-after{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 8px}.case-before-after>div{padding:13px 15px;border-radius:10px;background:#F7FAF7;border:1px solid #DAE9E0}.case-before-after>div:last-child{background:#EBF9F0;border-color:#B9E5CC}.case-before-after small{display:block;text-transform:uppercase;font-size:10px;color:#548168;font-weight:750}.case-before-after strong{font-size:13px;display:block;margin:5px 0}.case-before-after p{font-size:12px;color:#567460;line-height:1.6}
+@media(max-width:1100px){.case-columns{grid-template-columns:1fr}.case-facts{grid-template-columns:repeat(3,minmax(0,1fr))}.case-facts>div:nth-child(3){border:0}.case-facts>div:nth-child(n+4){border-top:1px solid var(--line)}}
+@media(max-width:740px){.case-hero{flex-direction:column;align-items:stretch;padding:20px}.case-hero-select{min-width:0}.case-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.case-facts>div:nth-child(3){border-right:1px solid var(--line)}.case-facts>div:nth-child(2n){border-right:0}.case-facts>div:nth-child(n+3){border-top:1px solid var(--line)}.case-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.case-update{flex-direction:column;align-items:stretch}.case-update-action{align-items:stretch}.case-update-action small{text-align:left;max-width:none}.case-before-after{grid-template-columns:1fr}.case-person{grid-template-columns:1fr}.case-person span{text-align:left}.case-hero h2{font-size:23px}}
+@media(max-width:400px){.case-metric{padding:12px}.case-metric strong{font-size:23px}.case-hero{padding:17px}.case-facts>div{padding:10px}.case-event{gap:8px}.case-event-body{padding:11px}.case-event-meta{align-items:flex-start}.case-buttons .btn{flex:1}}
+
+/* v0.8: Evidence provenance review. White surfaces keep emerald highlights readable. */
+.source-assurance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0 18px}.assurance-stat{padding:14px;background:#f4fbf8;border:1px solid #d4eadf;border-radius:12px;display:flex;flex-direction:column;gap:4px;min-width:0}.assurance-stat strong{font-size:25px;color:#07533e}.assurance-stat span{font-size:12px;color:#35584d}.source-assurance-note{grid-column:1/-1;margin:0!important;color:#496257}.source-audit-details{margin:16px 0 18px;border:1px solid #d6e7df;border-radius:12px;background:#fff}.source-audit-details summary{cursor:pointer;min-height:46px;padding:14px 16px;color:#0c5742;font-weight:700}.source-audit-details .tablewrap{padding:0 14px}.audit-table{width:100%;min-width:550px}.audit-table th{text-align:left;font-size:12px;color:#426157}.audit-table td{font-size:12px;overflow-wrap:anywhere;line-height:1.5}.audit-table code{font-size:11px}.audit-state{display:inline-block;padding:4px 8px;border-radius:99px;font-weight:650;font-size:11px}.audit-state.is-current{background:#ddf8e9;color:#0b6544}.audit-state.is-assumption{background:#ecf0f4;color:#445569}.audit-state.is-stale{background:#fff0d5;color:#80520a}.audit-state.is-error{background:#ffe4e6;color:#8e2231}.audit-warnings{display:block;color:#a13539}.source-audit-details>.micro{padding:0 16px 14px;line-height:1.55}@media(max-width:670px){.source-assurance{grid-template-columns:repeat(2,minmax(0,1fr))}.source-assurance .assurance-stat:nth-child(3){grid-column:1/-1}}@media(max-width:370px){.source-assurance{grid-template-columns:1fr}.source-assurance .assurance-stat:nth-child(3){grid-column:auto}}
+
+/* v0.9: simple, task-first navigation and progressive disclosure */
+.nav-more{margin-top:10px;border-top:1px solid rgba(185,234,206,.23);padding-top:10px}.nav-more>summary{cursor:pointer;list-style:none;color:#D5EBDD;font-weight:700;padding:11px 14px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-size:12px}.nav-more>summary::-webkit-details-marker{display:none}.nav-more>summary:hover,.nav-more[open]>summary{background:#185E47}.nav-extra{padding-left:7px}.nav-extra .navbtn{font-size:12px;padding:10px 12px;color:#C6E3D1}.navbtn:focus-visible,.nav-more>summary:focus-visible{outline:2px solid #A7F3D0;outline-offset:2px}
+.demo-start{gap:20px;align-items:center}.demo-kicker{font-size:10px;letter-spacing:1.1px;font-weight:800;color:#A7F3D0;margin-bottom:7px}.demo-start h2{font-size:20px}.demo-start p{font-size:13px}.demo-steps{margin-top:15px;display:flex;gap:10px;flex-wrap:wrap}.demo-steps span{border:1px solid rgba(210,253,230,.28);color:#E0F9EA;border-radius:100px;padding:4px 9px;font-size:11px}.demo-start>.btn{flex-shrink:0;padding:13px 19px}
+.case-guide{background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 19px;margin-bottom:18px;box-shadow:var(--shadow)}.case-guide-heading{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:12px}.case-guide-heading strong{font-size:14px;color:#164B36}.case-guide-heading span{font-size:11px;color:#648070}.case-guide-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.case-step-btn{min-width:0;display:flex;flex-direction:column;gap:2px;align-items:flex-start;text-align:left;border-radius:10px;border:1px solid #DAEAE0;padding:12px 14px;background:#F9FCFA;color:#245942;cursor:pointer}.case-step-btn.active,.case-step-btn:hover{background:#E8F8EF;border-color:#8BCEAA}.case-step-btn small{font-size:9px;letter-spacing:1px;color:#268360;font-weight:850}.case-step-btn strong{font-size:13px}.case-step-btn span{font-size:11px;color:#5E7A6C;white-space:normal}.case-one-line{background:#F1FAF5;border:1px solid #C8E8D5;border-radius:11px;padding:15px 18px;display:flex;align-items:center;gap:14px;margin:-2px 0 18px;min-width:0}.case-one-line-symbol{background:#D3F3E1;color:#116345;border-radius:10px;width:36px;height:36px;display:grid;place-items:center;flex:0 0 36px;font-weight:800}.case-one-line>div{flex:1}.case-one-line strong{font-size:13px;color:#12583D}.case-one-line p{font-size:12px;color:#3E6E53;margin:3px 0 0}.case-one-line .textlink{white-space:nowrap}.case-optional{min-height:0}.case-optional summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:15px}.case-optional summary::-webkit-details-marker{display:none}.case-optional summary strong{font-size:15px;color:#124C34;display:block;margin-top:5px}.case-optional summary small{display:block;font-size:12px;color:#688471;font-weight:400;margin-top:3px}.case-optional[open] summary{border-bottom:1px solid #E1EEE6;padding-bottom:15px;margin-bottom:15px}.case-next{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:20px 24px;margin-top:18px}.case-next strong{font-size:14px;color:#155138}.case-next p{color:#658375;font-size:12px;margin:5px 0 0;max-width:690px}#case-context,#case-evidence,#case-decision{scroll-margin-top:20px}
+@media(max-width:1100px){.case-guide-heading{flex-direction:column;align-items:flex-start}}
+@media(max-width:740px){.demo-start,.case-next{flex-direction:column;align-items:stretch}.demo-start .btn,.case-next .btn{white-space:normal}.case-guide-links{grid-template-columns:1fr}.case-step-btn{padding:9px 12px}.case-one-line{flex-wrap:wrap}.case-one-line .textlink{margin-left:50px}.case-guide-heading span{font-size:11px}}
+
+.overview-explainer summary{cursor:pointer;color:#19573D;font-weight:700}.overview-explainer summary:focus-visible{outline:2px solid #10B981;outline-offset:4px}.overview-explainer[open] .grid-two{margin-top:17px}
+
+/* v1.0 RC: keyboard accessibility and restrained mobile journey nav */
+.skip-link{position:fixed;top:-70px;left:14px;background:#fff;color:#064532;border:2px solid #047857;padding:10px 14px;border-radius:8px;z-index:9999;font-weight:800}
+.skip-link:focus{top:10px}
+summary:focus-visible,a:focus-visible,[data-case-step]:focus-visible,.table-account-link:focus-visible{outline:3px solid #34D399;outline-offset:3px}
+.table-account-link{border:0;background:transparent;text-align:left;padding:4px 6px 4px 0;color:inherit;display:flex;flex-direction:column;align-items:flex-start;border-radius:6px;cursor:pointer}
+.table-account-link:hover strong{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.table-account-link .micro{display:block}
+.page h1:focus{outline:none}
+.case-step-btn[aria-current=step]{background:#E6F8EE;border-color:#06936E;box-shadow:inset 0 0 0 1px #059669}
+@media(max-width:700px){.case-guide-heading span{display:none}.case-guide-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.case-step-btn{padding:9px 7px;gap:3px}.case-step-btn small{font-size:9px}.case-step-btn strong{font-size:11px}.case-step-btn span{display:none}.case-guide{padding:13px}.case-guide-heading{margin-bottom:10px}.case-hero{margin-top:2px}.case-facts{font-size:11px}}
+@media(max-width:380px){.case-step-btn strong{font-size:10px}}
+
+/* v1.0 RC: keep secondary labels legible on white cards */
+.micro,.panel-note,.metric-note,.account-primary .tiny,.account-meta .tiny,.plan-item-body span,.range-labels,.section-subtitle,.count-label,.case-optional summary small,.case-event-meta,.case-guide-heading span{color:#526F61}
+.sidebar-bottom p{color:#CCE8D8}
+@media(prefers-reduced-motion:reduce){.app *, .app *::before,.app *::after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+/* Clear two-column navigation on phones: no hidden horizontal menu items. */
+@media(max-width:700px){
+ .sidenav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 6px;overflow:visible}
+ .sidenav>.navbtn{width:100%;min-width:0;white-space:normal;font-size:11px;padding:10px;justify-content:flex-start;margin:0}
+ .nav-more{grid-column:1/-1;margin-top:1px;padding-top:3px}
+ .nav-more>summary{padding:8px 12px;font-size:11px}
+ .nav-extra{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px 0 0}
+ .nav-extra .navbtn{min-width:0;width:100%;font-size:11px;padding:9px;white-space:normal}
+}
+
+/* v1.1 recruiter quick review: show one commercial reasoning stage at a time. */
+.quick-mode-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px;background:#e7f7ef;border:1px solid #b8e2cb;border-radius:12px;margin:0 0 14px;color:#164f39;font-size:13px}
+.quick-mode-bar[hidden],.quick-bottom[hidden]{display:none!important}
+.quick-mode #journey-cases>[data-quick-step]:not([data-current-step="true"]){display:none!important}
+.quick-mode .case-next{display:none!important}
+.quick-bottom{display:flex;gap:12px;justify-content:space-between;align-items:center;background:#fff;border:1px solid #cde3d5;box-shadow:var(--shadow);border-radius:12px;padding:14px 18px;margin-top:15px}
+.quick-bottom>span{font-weight:750;color:#225842;font-size:12px;text-align:center}
+.quick-bottom .btn[disabled]{opacity:.45;cursor:not-allowed}
+.quick-mode #case-context:focus,.quick-mode #case-evidence:focus,.quick-mode #case-decision:focus{outline:3px solid #16a374;outline-offset:4px}
+@media(max-width:650px){.quick-mode-bar{flex-direction:column;align-items:stretch}.quick-mode-bar .btn{width:100%}.quick-bottom{position:sticky;bottom:8px;z-index:8;padding:10px;gap:6px}.quick-bottom .btn{font-size:11px;padding:10px 8px}.quick-bottom>span{font-size:11px;white-space:nowrap}}
+
+</style></head><body>
+<a class="skip-link" href="#main-workspace">Skip to main content</a>
+<div class="app">
+<aside class="sidebar" aria-label="Primary navigation"><div class="brand"><div class="brandmark" aria-hidden="true">G</div><div><div class="brandtitle">GrowthFlow</div><div class="brandsub">COMMERCIAL WORKSPACE</div></div></div><div class="sidenav-label">Main menu</div><nav class="sidenav" id="nav" aria-label="Main sections">
+<button class="navbtn active" data-page="overview"><span aria-hidden="true">⌂</span> Home</button>
+<button class="navbtn" data-page="journey"><span aria-hidden="true">◎</span> Develop an Account</button>
+<button class="navbtn" data-page="accounts"><span aria-hidden="true">▣</span> Target Accounts</button>
+<button class="navbtn" data-page="planner"><span aria-hidden="true">▥</span> Weekly Plan</button>
+<details class="nav-more" id="nav-more"><summary>More tools <span aria-hidden="true">⌄</span></summary><div class="nav-extra">
+<button class="navbtn" data-page="thesis"><span aria-hidden="true">◈</span> Detailed Review</button>
+<button class="navbtn" data-page="history"><span aria-hidden="true">▤</span> Saved Plans</button>
+<button class="navbtn" data-page="bridge"><span aria-hidden="true">⇄</span> CRM & Data Sources</button>
+</div></details></nav><div class="sidebar-bottom"><div class="sidestat"><span class="statusdot"></span> Sample workspace</div><p>Synthetic portfolio scenario. The public version contains synthetic data only; CRM connection is local development only.</p></div></aside>
+<div class="main"><header class="topbar"><span class="breadcrumb" id="breadcrumb" aria-live="polite">Workspace / Home</span><div class="top-right"><span class="tiny">Scenario snapshot · 26 Oct 2026</span><span class="demo-pill">SYNTHETIC DATA · v1.3 REVIEW</span></div></header><main class="content" id="main-workspace" tabindex="-1">
+<section class="page active" id="page-overview"><div class="headline"><div><div class="eyebrow">Commercial workspace</div><h1>Commercial overview</h1><p class="subtitle">Decide which commercial opportunities are worth developing, using documented customer evidence instead of assumptions. Works alongside your CRM.</p></div><div class="headline-actions"><button class="btn" id="start-tour">Guided tour</button><button class="btn btn-primary" data-quick-start="true">Start guided review →</button></div></div>
+<div class="card banner-dark demo-start" id="start-here"><div><div class="demo-kicker">START HERE · SHORT COMMERCIAL CASE</div><h2>Would you pursue Northline Distribution?</h2><p>A potential customer may need workflow software, but IT says their ERP already covers part of the problem. Is a sales follow-up still justified?</p><div class="demo-steps"><span>1 · Understand</span><span>2 · Check evidence</span><span>3 · Decide</span></div></div><button class="btn" data-quick-start="true">Start 3-step review →</button></div>
+<div class="source-strip"><span class="statusdot" aria-hidden="true"></span><strong id="source-label">Synthetic local demo</strong><span id="snapshot-status">Decision rules · as-of 2026-10-26</span><button class="textlink" data-page="bridge">Integration details →</button></div><div class="metric-grid" id="metrics"></div>
+<div class="grid-two"><section class="card panel"><div class="panel-header"><div><h2>Priority accounts</h2><p class="panel-note">Qualified priorities from sample records, not predicted win rates</p></div><button class="textlink" data-page="accounts">See all accounts →</button></div><div class="tablewrap"><table><thead><tr><th>Account</th><th>Fit</th><th>Tier</th><th>Effort</th></tr></thead><tbody id="overview-accounts"></tbody></table></div></section><section class="card panel"><div class="panel-header"><div><h2>What needs attention</h2><p class="panel-note">Actionable recommendations and data-quality controls</p></div></div><div class="insight-list" id="overview-insights"></div></section></div>
+<details class="card panel mt18 overview-explainer"><summary>How should I interpret these recommendations?</summary><div class="grid-two"><div class="note-box"><strong>Fit is not intent.</strong> NovaRetail's high fit score does not confirm buying interest.</div><div class="note-box"><strong>Capacity is a constraint.</strong> If urgent actions cannot fit the plan, a conflict must be surfaced rather than hidden.</div></div></details>
+</section>
+<section class="page" id="page-accounts"><div class="headline"><div><div class="eyebrow">Research and qualification</div><h1>Target Accounts</h1><p class="subtitle">Explore the evidence, confidence, and rationale behind each recommendation. CRM-owned properties are represented by fictional local snapshots.</p></div><button class="btn" id="reset-btn">↺ Reset what-if changes</button></div><div class="toolbar"><div class="layout-controls"><input class="input search" id="search-input" placeholder="Search companies or sectors..." aria-label="Search accounts"><select class="input-select" id="tier-filter" aria-label="Filter by priority"><option value="all">All priority tiers</option><option value="P1">P1 · Active</option><option value="P2">P2 · Qualify</option><option value="P3">P3 · Research</option><option value="Review">Review</option><option value="Exclude">Exclude</option><option value="Archived">Archived</option></select></div><span class="count-label" id="account-count"></span></div><div class="account-grid" id="accounts-list"></div><p class="micro" style="margin-top:16px">Every scored dimension links to an explicit synthetic evidence record and a 0–4 anchored rubric. Unknown dimensions are not zero. The 75% evidence gate prevents false confidence.</p></section>
+<section class="page" id="page-journey" aria-label="Account development case">
+  <div class="headline"><div><div class="eyebrow">Commercial case development</div><h1>Account Development</h1><p class="subtitle">Investigate a potential customer from research through discovery and decide whether a commercial pursuit is justified. Every example is synthetic.</p></div><div class="headline-actions"><button class="btn" id="journey-export">Export case brief ↓</button><button class="btn btn-primary" id="journey-account-review">Open detailed review ↗</button></div></div>
+  <nav class="case-guide" aria-label="Account case steps"><div class="case-guide-heading"><strong>Three steps to a commercial decision</strong><span>Start with Northline. Detailed records are optional.</span></div><div class="case-guide-links">
+<button type="button" data-case-step="context" class="case-step-btn active"><small>STEP 1</small><strong>Understand</strong><span>The customer and potential need</span></button>
+<button type="button" data-case-step="evidence" class="case-step-btn"><small>STEP 2</small><strong>Investigate</strong><span>Buyer evidence and objections</span></button>
+<button type="button" data-case-step="decision" class="case-step-btn"><small>STEP 3</small><strong>Decide</strong><span>Record an evidence-led action</span></button>
+</div></nav>
+  <div class="quick-mode-bar" id="quick-mode-bar" hidden><span><strong>Guided case</strong> · One step at a time · No CRM changes</span><button type="button" class="btn" id="quick-exit">Show full case</button></div>
+  <div class="card panel" id="journey-empty" hidden><h2>Scripted commercial cases are not part of this CRM snapshot</h2><p>Target Account and Account Review remain available for imported CRM companies. The three fictional guided cases use a separate synthetic dataset. Restore demo data to reopen those cases.</p><button class="btn btn-primary" data-page="accounts">Open Target Accounts</button></div><div id="journey-cases">
+  <div class="case-hero" id="case-context"><div class="case-hero-main"><div class="case-eyebrow">B2B ACCOUNT CASE <span class="case-hero-divider">/</span> FLOWBRIDGE SOFTWARE GMBH</div><h2 id="journey-account-name">Northline Distribution</h2><p id="journey-tagline"></p><div class="case-reco" id="journey-recommendation"></div></div><div class="case-hero-select"><label for="journey-account">Customer scenario</label><select class="input-select" id="journey-account"></select><small>Three synthetic commercial situations</small></div></div>
+  <div class="card case-facts" id="journey-head-details"></div>
+  <div class="case-metrics" id="journey-metrics"></div>
+  <div class="case-one-line" aria-live="polite"><span class="case-one-line-symbol" aria-hidden="true">?</span><div><strong>Why this matters</strong><p id="journey-short-explanation">Assessing account...</p></div><button type="button" class="textlink" data-case-step="evidence">See evidence →</button></div>
+  <div class="case-columns">
+    <section class="card panel"><div class="panel-header"><div><div class="eyebrow">Commercial context</div><h2>What do we need to learn?</h2><p class="panel-note">Separate buyer statements from unverified account hypotheses</p></div></div><div class="case-field"><small>Potential business problem</small><p id="journey-problem"></p></div><div class="case-field"><small>Qualification objective</small><p id="journey-goal"></p></div><div class="case-field"><small>Working hypothesis</small><p id="journey-hypothesis"></p></div><div class="case-field"><small>Customer value to validate · not promised ROI</small><p id="journey-proposition"></p></div></section>
+    <details class="card panel case-optional"><summary><span><span class="eyebrow">OPTIONAL DETAIL</span><strong>Buying stakeholders & discovery questions</strong><small>Open if you want to inspect roles, buying gaps and the proposed discussion.</small></span><span aria-hidden="true">⌄</span></summary><div class="case-optional-body"><div id="journey-buyers"></div><p class="case-small-heading">Discovery questions</p><ol class="thesis-questions" id="journey-questions"></ol></div></details>
+  </div>
+  <section class="card panel case-evidence-panel" id="case-evidence"><div class="panel-header"><div><div class="eyebrow">Chronology</div><h2>What did the buyer actually say?</h2><p class="panel-note">Read the dated record, then compare the possible follow-up. The original objection is never erased.</p></div><button class="btn btn-sm" id="journey-preview">Preview buyer follow-up</button></div><div class="source-assurance" id="journey-source-assurance" aria-live="polite"></div><div class="case-timeline" id="journey-evidence"></div><details class="source-audit-details"><summary>Inspect evidence provenance and freshness</summary><div class="tablewrap"><table class="audit-table"><thead><tr><th>Source ID</th><th>Origin</th><th>Date</th><th>Status</th></tr></thead><tbody id="journey-source-register"></tbody></table></div><p class="micro">Evidence IDs and buyer conversations are simulated. Date checks use the fixed demo snapshot (26 October 2026), not today’s live CRM data.</p></details><div id="journey-compare"></div><div class="case-update"><div><strong>Next source-led development step</strong><p id="journey-next-step"></p></div><div class="case-update-action" id="journey-event-control"></div></div></section>
+  <div class="case-columns case-bottom" id="case-decision">
+    <section class="card panel"><div class="panel-header"><div><div class="eyebrow">Business judgment</div><h2>Current recommendation</h2><p class="panel-note">Explainable assessment, not a predicted close or win rate</p></div></div><div id="journey-decision-context"></div></section>
+    <section class="card panel"><div class="panel-header"><div><div class="eyebrow">Account review</div><h2>Your commercial decision</h2><p class="panel-note">Evaluate and document an action against the evidence</p></div></div><label class="thesis-label" for="journey-decision">Commercial action</label><select class="input-select case-control" id="journey-decision"></select><label class="thesis-label" for="journey-rationale">Reason (required when overriding recommendation)</label><textarea class="thesis-edit" id="journey-rationale" rows="3" maxlength="600" placeholder="What evidence supports this direction and what is still uncertain?"></textarea><div class="case-buttons"><button class="btn" id="journey-assess">Check decision</button><button class="btn btn-primary" id="journey-store" disabled>Save decision</button></div><div id="journey-feedback"></div><div id="journey-status"></div></section>
+  </div>
+  <div class="note-box mt18">Portfolio demonstration with invented companies, buyer conversations and amounts. No messages are sent, no production CRM data is accessed, and no real sales outcomes are claimed. <button class="textlink" id="journey-open-planner">Review the team coverage plan →</button></div>
+</div>
+<div class="quick-bottom" id="quick-bottom" hidden><button class="btn" id="quick-back" type="button">← Previous</button><span id="quick-progress" role="status" aria-live="polite">Step 1 of 3</span><button class="btn btn-primary" id="quick-next" type="button">Next: Investigate →</button></div>
+<div class="case-next card"><div><strong>Next: turn a qualified action into a manageable weekly plan</strong><p>Check how much commercial work the team can realistically cover. A paused account is kept in the records but removed from active allocation.</p></div><button class="btn btn-primary" data-page="planner">Open weekly plan →</button></div></section>
+<section class="page" id="page-thesis"><div class="headline"><div><div class="eyebrow">Account development / qualification</div><h1>Account review</h1><p class="subtitle">Examine company fit, verified buyer information, open objections and the commercial approach before moving forward.</p></div><div class="headline-actions"><button class="btn" id="thesis-reset">↺ Reset account review</button><button class="btn btn-primary" id="thesis-export">Export account review ↓</button></div></div>
+ <div class="thesis-intro"><div><span class="eyebrow">ACCOUNT DEVELOPMENT</span><h2 id="thesis-header"></h2><div class="thesis-sub" id="thesis-account-sub"></div></div><div class="thesis-intro-right"><label class="thesis-label" for="thesis-account-select">Account</label><select class="input-select" id="thesis-account-select"></select><div class="thesis-rec" id="thesis-status"></div></div></div>
+ <div class="commercial-strip card" id="thesis-commercial" aria-label="CRM account summary"></div>
+ <div class="thesis-signals" id="thesis-diagnostics"></div>
+ <div id="thesis-event" class="thesis-event"></div>
+ <div class="thesis-columns"><section class="card panel thesis-panel"><div class="panel-header"><div><div class="eyebrow">01 · Discovery and source records</div><h2>Research and buyer evidence</h2><p class="panel-note">Evidence is linked to a dated sample record. Later customer updates add new records rather than rewriting earlier observations.</p></div></div><div id="thesis-proof"></div></section>
+ <section class="card panel thesis-panel"><div class="panel-header"><div><div class="eyebrow">02 · Commercial hypothesis</div><h2>Customer need and proposed value</h2><p class="panel-note">Testable claims, not invented customer results.</p></div></div><div id="thesis-strategy"></div><button class="btn" id="thesis-save">Save account review</button><p class="micro" id="thesis-save-note"></p></section></div>
+ <div class="thesis-columns"><section class="card panel thesis-panel"><div class="panel-header"><div><div class="eyebrow">03 · Buying committee</div><h2>Stakeholder coverage</h2><p class="panel-note">Roles are hypotheses unless the fictional CRM record explicitly supports them.</p></div></div><div class="thesis-buyers" id="thesis-buyers"></div><h3 class="thesis-minor">Discovery agenda</h3><ol class="thesis-questions" id="thesis-questions"></ol></section>
+ <section class="card panel thesis-panel"><div class="panel-header"><div><div class="eyebrow">04 · Qualification decision</div><h2>Pursuit recommendation</h2><p class="panel-note">A good salesperson should know when not to pursue.</p></div></div><div id="thesis-gaps"></div><label class="thesis-label" for="thesis-decision">Record decision</label><select class="input-select thesis-decision" id="thesis-decision"><option value="research">Research further</option><option value="discovery">Prepare discovery questions</option><option value="pursue">Approve active pursuit</option><option value="hold">Pause / defer</option><option value="disqualify">Disqualify</option></select><div class="thesis-outcome" id="thesis-outcome"></div><button class="btn btn-primary" id="thesis-approve">Record account decision</button></section></div>
+ <div class="card panel mt18"><div class="panel-header"><div><h2>Why the account decision changes</h2><p class="panel-note">New buyer information can confirm or weaken the proposed commercial case.</p></div></div><div class="grid-two"><div class="note-box"><strong>Counter-evidence is a first-class input.</strong><br>An earlier objection stays in the record even when a later buyer conversation resolves it. The recommendation changes without erasing the original note.</div><div class="note-box"><strong>Show what would change the decision.</strong><br>Explicit stop conditions and documented buying-role gaps help the team avoid advancing an unsupported commercial story.</div></div></div></section>
+ <section class="page" id="page-planner"><div class="headline"><div><div class="eyebrow">Territory management</div><h1>Territory Coverage Plan</h1><p class="subtitle">Select team capacity and compare two transparent allocation policies. This is rules-based planning, not a predicted sales outcome.</p></div><div class="headline-actions"><button class="btn" id="export-plan">Export decision JSON ↓</button><button class="btn btn-primary" id="save-plan">Save planning draft ↗</button></div></div>
+<div class="plan-grid"><section class="card control-card"><div class="panel-header"><div><h2>Weekly coverage assumptions</h2><p class="panel-note">Weekly hours available for proactive BD activities, not total working time</p></div></div><div class="statline"><strong>Available team capacity</strong><span class="capacity-number"><span id="capacity-value">12</span>h</span></div><input id="capacity-range" class="range" aria-label="Weekly available BD hours" type="range" min="4" max="24" value="12" step="1"><div class="range-labels"><span>4 hours</span><span>14 hours</span><span>24 hours</span></div><div class="section-label" style="margin-top:26px">Allocation policy</div><div class="radio-segment"><button class="seg-opt active" data-strategy="pipeline">Pipeline first</button><button class="seg-opt" data-strategy="balanced">Reserve research</button></div><p class="section-subtitle" id="strategy-explanation"></p>
+<div class="separator"></div><div class="section-label">Effort assumptions</div>
+<div class="radio-segment" role="group" aria-label="Planning effort scenario"><button class="seg-opt active" data-effort="baseline" aria-pressed="true">Expected time</button><button class="seg-opt" data-effort="buffered" aria-pressed="false">+25% buffer</button></div>
+<p class="section-subtitle">The buffer rounds each activity up to the next half-hour. It tests schedule resilience, not actual task-duration probabilities.</p>
+<div class="separator"></div><div class="statline"><span>Hours assigned</span><strong id="hours-assigned"></strong></div><div class="progress-track"><div class="progress-fill" id="capacity-progress" style="width:0"></div></div><div class="statline"><span>Unallocated capacity</span><strong id="hours-left"></strong></div><div class="statline"><span>Urgent P1 demand</span><strong id="urgent-hours"></strong></div><div id="conflict-box" style="margin-top:15px"></div></section><section class="card panel"><div class="panel-header"><div><h2>Proposed weekly activities</h2><p class="panel-note">Priority tiers are not win probabilities</p></div><span class="demo-pill" id="chosen-count"></span></div><div class="section-label">Selected actions</div><div id="selected-actions"></div><div class="section-label">Deferred eligible actions</div><div id="deferred-actions"></div></section></div>
+<div class="card panel mt18"><div class="panel-header"><div><h2>Workload sensitivity</h2><p class="panel-note">Compare the same policy under expected effort versus a 25% contingency buffer.</p></div></div><div id="stress-test" class="stress-grid"></div><div class="note-box mt18" id="stress-explanation"></div></div>
+<div class="card panel mt18"><div class="panel-header"><div><h2>Compare both approaches</h2><p class="panel-note">See the commercial trade-off at the same capacity</p></div></div><div class="comparison" id="comparison"></div><div class="note-box mt18" id="strategy-delta"></div><p class="micro" style="margin-top:16px">Reserve research selects one high-fit unengaged account after P1 commitments are covered. The policy is a transparent heuristic; it is not a proven optimum or revenue forecast.</p></div>
+</section>
+<section class="page" id="page-history"><div class="headline"><div><div class="eyebrow">Audit trail</div><h1>Review Log</h1><p class="subtitle">Save planning snapshots as working drafts and compare changes. These auditable draft snapshots remain in this browser session only.</p></div><button class="btn" id="clear-history">Clear drafts</button></div><div id="history-list" class="logs"></div><div class="note-box mt18">Saved plans record capacity, selected and deferred actions, scenario policy, conflicts, and model version. No CRM records are changed. These are planning drafts, not approvals or revenue outcomes.</div></section>
+<section class="page" id="page-bridge"><div class="headline"><div><div class="eyebrow">Data governance</div><h1>CRM & Data Sources</h1><p class="subtitle">HubSpot retains company, deal and activity records. GrowthFlow only reads snapshot data and maintains separate analytical assumptions.</p></div><button class="btn" id="reset-demo">↺ Restore demo data</button></div>
+<div class="grid-two"><section class="card panel"><h2>CRM connection</h2><p class="panel-note">The standalone HTML demo operates entirely offline. It does not contain API credentials.</p><div class="bridge-fact"><span>Current source</span><strong id="bridge-source"></strong></div><div class="bridge-fact"><span>Last snapshot</span><strong id="bridge-time"></strong></div><div class="bridge-fact"><span>Accounts loaded</span><strong id="bridge-count"></strong></div><div class="note-box mt18" id="bridge-warning"></div><div class="note-box mt18" id="connector-preview" role="status" aria-live="polite" hidden></div><button class="btn btn-dark mt18" id="sync-button" disabled>Private CRM preview requires local server</button><p class="micro mt18">The public Render demo is intentionally disconnected. A local private read-only validation never replaces the fictional recruiter case or writes to CRM. Never place credentials in a public deployment.</p></section>
+<section class="card panel"><h2>Record ownership</h2><p class="panel-note">Read-only by design for the current development stage.</p><div class="bridge-fact"><span>HubSpot owns</span><strong>CRM IDs, companies, deal fields</strong></div><div class="bridge-fact"><span>GrowthFlow owns</span><strong>Rubric, evidence, capacity plans</strong></div><div class="bridge-fact"><span>Import behavior</span><strong>Unknown until reviewed</strong></div><div class="bridge-fact"><span>Write-back</span><strong>Disabled</strong></div><div class="note-box mt18"><strong>Conservative mapping.</strong> Imported CRM companies do not automatically inherit synthetic qualification scores or buyer-intent assumptions. An analyst must support those decisions with evidence.</div></section></div>
+<div class="card panel mt18"><div class="panel-header"><div><h2>Data provenance and ownership</h2><p class="panel-note">How commercial teams typically combine CRM, research and customer conversations. These sample records are illustrative.</p></div></div><div class="tablewrap"><table><thead><tr><th>Field or decision</th><th>Original system / source</th><th>Validation policy</th><th>Owner</th></tr></thead><tbody id="data-lineage"></tbody></table></div></div>
+<div class="card panel mt18 crm-contract"><div class="panel-header"><div><div class="eyebrow">Integration readiness · 2026-09 API</div><h2>CRM record mapping preview</h2><p class="panel-note">Inspect a realistic HubSpot-shaped sample payload next to the information GrowthFlow is allowed to infer. This is an offline schema fixture, not a live CRM connection.</p></div><span class="demo-pill">SYNTHETIC API RESPONSE</span></div>
+<div class="crm-preview-controls"><label for="crm-preview-select">Sample account</label><select id="crm-preview-select" class="input-select"><option value="company-deal">Northline · Company + deal</option><option value="company-only">NovaRetail · No associated deal</option><option value="closed-deal">RheinCargo · Closed outcome</option></select></div>
+<div class="crm-preview-grid"><div><div class="section-label">CRM snapshot (read-only input)</div><pre id="crm-preview-raw" class="crm-code"></pre></div><div><div class="section-label">GrowthFlow interpretation</div><div id="crm-preview-mapped" class="crm-mapped"></div></div></div>
+<div class="note-box mt18">Deal stages are CRM-specific internal codes, not proof of customer need. Revenue, buyer objections and permission to contact require their own verified sources. No demo record is sent to HubSpot.</div></div>
+<div class="card panel mt18"><h2>Why not build another CRM?</h2><p>GrowthFlow is a focused decision-support layer. It compares customer fit, documented buying signals, resource constraints and research uncertainty without replacing the systems a BD team already uses.</p><p class="micro">All account research in the public demo is fictional. Live credentials must stay server-side and never be pasted into the browser or published in the project.</p></div>
+</section>
+</main></div></div>
+<div class="drawer-wrap" id="drawer-wrap" aria-hidden="true"><button class="veil" id="drawer-veil" aria-label="Close account details"></button><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title"><div class="drawer-head"><div><div class="eyebrow">Account decision brief</div><h2 id="drawer-title"></h2><div id="drawer-subtitle" class="tiny"></div></div><button class="closebtn" id="drawer-close" aria-label="Close account details">✕</button></div><div id="drawer-body"></div></aside></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><aside id="tour" class="tour-float" hidden aria-live="polite"></aside>
+<script>
+// Synthetic portfolio data only. No real people, customers or sales results.
+const FIXTURE_DEMO_DATE = '2026-10-26';
+const FIXTURE_VERSION = '0.1.0';
+const FIXTURE_RUBRIC = [
+  { key: 'industry', label: 'Industry & business model', max: 25 },
+  { key: 'scale', label: 'Target company scale', max: 20 },
+  { key: 'complexity', label: 'Operational complexity', max: 35 },
+  { key: 'tech', label: 'Technical adoption feasibility', max: 20 }
+];
+const syn = (claim, kind, date='2026-10-22') => ({claim, kind, date, synthetic:true});
+const originalFixtureAccounts = [
+ {id:'a1',crmId:'HS-1001',name:'CanalTrade BV',market:'Netherlands',country:'NL',sector:'Wholesale distribution',employees:210,crmUpdated:'2026-10-25',fit:{industry:20,scale:16,complexity:28,tech:16},stage:'evaluation',confirmedNeed:true,due:'2026-10-27',hours:4,action:'Review integration feasibility with the buyer',owner:'A. Weber',evidence:[syn('Discovery identified manual exception escalation across two warehouses.','Buyer discovery'),syn('Commercial evaluation and technical review requested.','CRM activity')],note:'Commercial evaluation is active; technical fit must be validated before any proposal.',segment:'distributor'},
+ {id:'a2',crmId:'HS-1002',name:'Northline Distribution GmbH',market:'Germany',country:'DE',sector:'Multi-site distribution',employees:320,crmUpdated:'2026-10-25',fit:{industry:23,scale:18,complexity:32,tech:17},stage:'discovery',confirmedNeed:true,due:'2026-10-28',hours:5,action:'Run stakeholder qualification workshop',owner:'A. Weber',evidence:[syn('Discovery confirmed recurring cross-site exception handoff problems.','Buyer discovery'),syn('Operations lead agreed to a stakeholder workshop.','CRM activity')],note:'Verified simulated need and a scheduled stakeholder discussion justify progressing the account.',segment:'distributor'},
+ {id:'a3',crmId:'HS-1003',name:'Hansa Wholesale GmbH',market:'Germany',country:'DE',sector:'Wholesale distribution',employees:140,crmUpdated:'2026-10-25',fit:{industry:19,scale:16,complexity:25,tech:15},stage:'replied',confirmedNeed:false,due:'2026-10-30',hours:3,action:'Prepare targeted discovery questions',owner:'S. Meier',evidence:[syn('Operations contact replied and agreed to explore a first conversation.','CRM activity'),syn('Business pain and budget have not yet been confirmed.','Analyst assessment')],note:'Positive engagement exists, but the buying problem still needs qualification.',segment:'distributor'},
+ {id:'a4',crmId:'HS-1004',name:'RetailLink Supply GmbH',market:'Germany',country:'DE',sector:'Retail supply',employees:265,crmUpdated:'2026-10-25',fit:{industry:23,scale:17,complexity:29,tech:16},stage:'replied',confirmedNeed:false,due:'2026-10-31',hours:3,action:'Prepare first discovery conversation',owner:'S. Meier',evidence:[syn('A buyer requested an exploratory discussion.','CRM activity'),syn('Technical workflow requirements are not yet confirmed.','Analyst assessment')],note:'High structural fit and an exploratory request warrant discovery preparation.',segment:'retail'},
+ {id:'a5',crmId:'HS-1005',name:'NovaRetail GmbH',market:'Germany',country:'DE',sector:'Retail supply operations',employees:390,crmUpdated:'2026-10-25',fit:{industry:25,scale:20,complexity:32,tech:18},stage:'none',confirmedNeed:false,due:'2026-11-03',hours:2,action:'Validate possible use case and stakeholder map',owner:'A. Weber',evidence:[syn('Company profile matches nearly every ideal-customer dimension.','Company research'),syn('No buyer interest or current purchasing need has been verified.','Analyst assessment')],note:'Highest fit, but no demonstrated buying intent. Research rather than advance as a deal.',segment:'retail'},
+ {id:'a6',crmId:'HS-1006',name:'BerlinFresh Distribution GmbH',market:'Germany',country:'DE',sector:'Food distribution',employees:95,crmUpdated:'2026-10-24',fit:{industry:19,scale:13,complexity:24,tech:14},stage:'none',confirmedNeed:false,due:'2026-11-04',hours:2,action:'Research adoption feasibility and timing',owner:'S. Meier',evidence:[syn('Multiple deliveries and warehouse handoffs could create coordination needs.','Company research'),syn('No direct customer conversation has occurred.','Analyst assessment')],note:'Possible ICP fit, but timing and buying interest are entirely unverified.',segment:'distributor'},
+ {id:'a7',crmId:'HS-1007',name:'Westport Trading BV',market:'Netherlands',country:'NL',sector:'Import agency',employees:42,crmUpdated:'2026-10-25',fit:{industry:16,scale:14,complexity:17,tech:13},stage:'none',confirmedNeed:false,due:'2026-11-05',hours:2,action:'Review suitability with manager',owner:'A. Weber',evidence:[syn('Initial operational complexity appears below the target use case.','Company research')],note:'Below the current minimum fit threshold of 70. Manual review, not pipeline priority.',segment:'other'},
+ {id:'a8',crmId:'HS-1008',name:'EuroParts Supply GmbH',market:'Germany',country:'DE',sector:'Spare-parts wholesale',employees:175,crmUpdated:'2026-10-25',fit:{industry:null,scale:17,complexity:28,tech:null},stage:'none',confirmedNeed:false,due:'2026-11-05',hours:2,action:'Complete industry and integration research',owner:'S. Meier',evidence:[syn('Employee count and multi-site distribution are documented.','Company research'),syn('Industry fit and ERP integration feasibility remain unknown.','Research gap')],note:'High provisional fit cannot substitute for missing evidence. Only 55% rubric coverage.',segment:'distributor'},
+ {id:'a9',crmId:'HS-1009',name:'RheinCargo Products GmbH',market:'Germany',country:'DE',sector:'Industrial wholesale',employees:230,crmUpdated:'2026-10-25',fit:{industry:21,scale:17,complexity:29,tech:15},stage:'closed_lost',confirmedNeed:true,due:'2026-10-29',hours:2,action:'Archive historical outcome',owner:'A. Weber',evidence:[syn('The associated CRM opportunity was closed-lost after solution evaluation.','CRM deal outcome')],note:'Retain for historical analysis, but do not treat as an active sales opportunity.',segment:'distributor'},
+ {id:'a10',crmId:'HS-1010',name:'Alpine Group AG',market:'Switzerland',country:'CH',sector:'Distribution',employees:280,crmUpdated:'2026-10-25',fit:{industry:22,scale:18,complexity:30,tech:17},stage:'none',confirmedNeed:false,due:'2026-11-03',hours:2,action:'Out of current territory',owner:'S. Meier',evidence:[syn('Company registered in Switzerland; initial target territories are DE and NL.','Company research')],note:'Outside the initial territory. Could be revisited only after a strategy change.',segment:'distributor'},
+ {id:'a11',crmId:'HS-1011',name:'Caremark Retail Supply GmbH',market:'Germany',country:'DE',sector:'Retail supply',employees:185,crmUpdated:'2026-10-25',fit:{industry:24,scale:18,complexity:31,tech:18},stage:'none',confirmedNeed:false,doNotContact:true,due:'2026-11-03',hours:2,action:'No outreach permitted',owner:'A. Weber',evidence:[syn('Account flagged do-not-contact in synthetic CRM test data.','CRM preference')],note:'Explicit do-not-contact status blocks proactive contact recommendations.',segment:'retail'},
+ // Intentional duplicated CRM id to test import deduplication. It must never appear twice.
+ {id:'a12-duplicate',crmId:'HS-1002',name:'Northline Distribution GmbH [import duplicate]',market:'Germany',country:'DE',sector:'Multi-site distribution',employees:320,crmUpdated:'2026-10-20',fit:{industry:23,scale:18,complexity:32,tech:17},stage:'discovery',confirmedNeed:true,due:'2026-10-28',hours:5,action:'Duplicate row',owner:'A. Weber',evidence:[],note:'Older duplicate import record.',segment:'distributor'}
+];
+
+
+const DEMO_DATE = FIXTURE_DEMO_DATE;
+
+
+const MODEL_VERSION = '0.8.0';
+const RUBRIC = [
+ {key:'industry',label:'Industry & use-case alignment',max:25,levels:['No relevant use case','Weak adjacency','Some relevant workflows','Strong adjacent use case','Direct target-industry fit'],rationale:'Relevant distribution, wholesale or retail-supply workflows'},
+ {key:'scale',label:'Target company scale',max:20,levels:['Outside reasonable reach','Major size mismatch','Partial size fit','Within ICP edge range','Core ICP (100–400 employees)'],rationale:'Initial commercial focus: distributors and wholesalers with 50–500 employees'},
+ {key:'complexity',label:'Operational coordination complexity',max:35,levels:['No meaningful cross-team handoffs','Limited coordination burden','Moderate recurring handoffs','Multiple operational handoffs','Clear multi-team exceptions and escalation'],rationale:'Potential need for workflow coordination; not an estimate of buyer interest'},
+ {key:'tech',label:'Technical adoption feasibility',max:20,levels:['Known blocker','Major implementation friction','Unknown integration constraints partially researched','Manageable integration effort','Clear supported deployment path'],rationale:'ERP, data exchange and operational deployment constraints'}
+];
+const operational = {
+ a1:{complexity:[4,'Hypothetical discovery: two warehouses require repeated exception escalation.'],tech:[3,'Hypothetical technical note: API access requires a feasibility review.']},
+ a2:{complexity:[4,'Hypothetical discovery: cross-site exception ownership causes handoff delays.'],tech:[3,'Hypothetical discovery: business users and IT agreed to review integration options.']},
+ a3:{complexity:[3,'Hypothetical analyst research: recurring order exception handoffs across departments.'],tech:[3,'Hypothetical analyst research: ERP export options need validation.']},
+ a4:{complexity:[3,'Hypothetical research: supply and retail operations span several locations.'],tech:[3,'Hypothetical research: integration architecture has not been confirmed.']},
+ a5:{complexity:[4,'Hypothetical company research: several distribution hubs and multi-team approvals.'],tech:[4,'Hypothetical company research: mature IT integration function documented.']},
+ a6:{complexity:[3,'Hypothetical research: fresh-goods flows create regular coordination requirements.'],tech:[2,'Hypothetical research: technology stack only partially documented.']},
+ a7:{complexity:[1,'Hypothetical research: limited distribution infrastructure and coordination.'],tech:[2,'Hypothetical research: technology suitability only partly documented.']},
+ a8:{complexity:[3,'Hypothetical desk research: multiple spare-parts warehouses and manual handoffs.'],tech:[null,'Technology integration requirements not researched.']},
+ a9:{complexity:[3,'Hypothetical closed-lost record: handoffs were a known issue.'],tech:[3,'Hypothetical closed-lost record: feasibility discussed.']},
+ a10:{complexity:[4,'Hypothetical research: multiple warehouses with substantial escalations.'],tech:[3,'Hypothetical research: existing integration options require review.']},
+ a11:{complexity:[4,'Hypothetical research: multi-team retail supply processes.'],tech:[3,'Hypothetical research: ERP export capability documented in synthetic record.']}
+};
+function scaleLevel(n){if(n>=100&&n<=400)return 4;if((n>=50&&n<100)||(n>400&&n<=500))return 3;if((n>=20&&n<50)||(n>500&&n<=1000))return 2;if(n>=10&&n<=2000)return 1;return 0;}
+function industryLevel(a){if(a.id==='a8')return null;if(/wholesale|distribution|retail supply/i.test(a.sector))return 4;if(/import agency/i.test(a.sector))return 2;return 3;}
+const rounded = (value,max)=>Math.round((value/max)*4);
+const rawAccounts = originalFixtureAccounts.map(a=>{
+ if(a.id==='a12-duplicate')return a; // duplicate is discarded before evaluation
+ const extra=operational[a.id]||{};
+ const levels={industry:industryLevel(a),scale:scaleLevel(a.employees),complexity:extra.complexity?.[0]??null,tech:extra.tech?.[0]??null};
+ const evidence=[];const scored={};
+ for(const d of RUBRIC){const level=levels[d.key];if(level===null||level===undefined){scored[d.key]={level:null,sourceId:null,note:'Not yet established'};continue;}
+ const sourceId=`SYN-${a.id.toUpperCase()}-${d.key.toUpperCase()}`;
+ const description=d.key==='industry'?`Fictional CRM category: ${a.sector}; assessed against the target industry profile.`:
+ d.key==='scale'?`Fictional CRM employee count: ${a.employees}; assessed against the 50–500 employee ICP.`:(extra[d.key]?.[1]||'Synthetic preliminary analyst assessment.');
+ evidence.push({id:sourceId,kind: d.key==='scale'||d.key==='industry'?'CRM snapshot':'Research assumption',claim:description,date:'2026-10-24',synthetic:true});
+ scored[d.key]={level,sourceId,note:description};}
+ const buyerEvidence=a.evidence.map((e,i)=>({...e,id:`SYN-${a.id.toUpperCase()}-NOTE-${i+1}`}));
+ return {...a,fit:undefined,scored,evidence:[...evidence,...buyerEvidence],source:'Synthetic demo fixture'};
+});
+function sampleSnapshot(){return {source:'synthetic',syncedAt:'2026-10-26T09:00:00Z',accounts:rawAccounts};}
+
+
+
+const PRIORITY_ORDER={P1:0,P2:1,P3:2,Review:3,Exclude:4,Archived:5};
+const ISO=/^\d{4}-\d{2}-\d{2}$/;
+const epoch=s=>ISO.test(s||'')?Date.parse(s+'T00:00:00Z')/86400000:NaN;
+const daysBetween=(a,b=DEMO_DATE)=>epoch(b)-epoch(a);
+function dedupeAccounts(raw){const map=new Map();let duplicates=0;for(const a of raw){const id=a.crmId||a.id;if(map.has(id)){duplicates++;if(epoch(a.crmUpdated)>epoch(map.get(id).crmUpdated))map.set(id,a);}else map.set(id,a);}return {accounts:[...map.values()].map(a=>structuredClone(a)),duplicates};}
+function assessFit(account){let earned=0,known=0;const dimensions=RUBRIC.map(d=>{
+ const item=account.scored?.[d.key];const source=account.evidence?.find(e=>e.id===item?.sourceId);
+ const valid=item&&Number.isInteger(item.level)&&item.level>=0&&item.level<=4&&source;
+ const points=valid?Math.round(d.max*item.level/4*100)/100:null;
+ if(valid){earned+=points;known+=d.max;}
+ return {...d,level:valid?item.level:null,score:points,source:source||null,why:item?.note||null};
+ });return {fit:known?Math.round(100*earned/known):null,coverage:known,dimensions,isProvisional:known<100};}
+function verifiedBuyerNeed(a){return Boolean(a.confirmedNeed && a.evidence?.some(e=>e.kind==='Buyer discovery'&&e.claim) || (a.scenarioModified&&a.confirmedNeed&&a.scenarioReason?.length>=8));}
+function recordedEngagement(a){return a.evidence?.some(e=>e.kind==='CRM activity'&&e.claim)||Boolean(a.scenarioModified&&a.scenarioReason?.length>=8);}
+function classify(a,now=DEMO_DATE){const rating=assessFit(a);const base={...rating,eligible:false,syncAge:daysBetween(a.crmUpdated,now)};
+ if(a.stage==='closed_lost'||a.stage==='closed_won')return {...base,tier:'Archived',reason:`Closed ${a.stage==='closed_lost'?'lost':'won'} CRM outcome; exclude from proactive account planning.`};
+ if(a.doNotPursue||a.doNotContact)return {...base,tier:'Exclude',reason:'Explicit do-not-contact/do-not-pursue restriction. No proactive outreach should be suggested.'};
+ if(a.planningHold===true)return {...base,tier:'Review',reason:'Documented technical feasibility blocker. Pause new allocation until an alternative is verified.'};
+ if(!a.country||a.country==='??')return {...base,tier:'Review',reason:'CRM country is missing or unrecognized. Verify territory before prioritizing.'};
+ if(!['DE','NL'].includes(a.country))return {...base,tier:'Exclude',reason:'Outside the agreed Germany/Netherlands initial territory.'};
+ if(!Number.isFinite(base.syncAge)||base.syncAge>7||base.syncAge<0)return {...base,tier:'Review',reason:'CRM information is missing, stale or future-dated. Refresh before prioritizing.'};
+ if(rating.coverage<75)return {...base,tier:'Review',reason:`Research coverage ${rating.coverage}% is below the 75% gate; missing dimensions are unknown, not zero.`};
+ if(rating.fit<70)return {...base,tier:'Review',reason:`Current evidence-backed fit ${rating.fit}/100 is below the 70-point review gate.`};
+ if(a.confirmedNeed&&['discovery','evaluation'].includes(a.stage)&&a.due&&verifiedBuyerNeed(a))return {...base,tier:'P1',eligible:true,reason:a.scenarioModified?'Scenario-assumed confirmed need and scheduled activity. Not new CRM evidence.':'Buyer need documented and an active next step scheduled; protect the follow-up.'};
+ if(['replied','discovery','evaluation'].includes(a.stage)){
+   if(!recordedEngagement(a))return {...base,tier:'Review',reason:'CRM shows progressed engagement but no supporting activity evidence exists; verify the interaction before planning.'};
+   return {...base,tier:'P2',eligible:true,reason:'Engagement is documented, but qualification is incomplete; verify problem, decision process and timeline.'};
+ }
+ return {...base,tier:'P3',eligible:true,reason:'Customer fit is plausible, but buying intent is not established; use research to identify a relevant problem.'};
+}
+function evaluatedAccounts(accounts,now=DEMO_DATE){return accounts.map(a=>({...a,assessment:classify(a,now)})).sort((a,b)=>PRIORITY_ORDER[a.assessment.tier]-PRIORITY_ORDER[b.assessment.tier]||(Number.isFinite(epoch(a.due))?epoch(a.due):Infinity)-(Number.isFinite(epoch(b.due))?epoch(b.due):Infinity)||(b.assessment.fit??-1)-(a.assessment.fit??-1));}
+// Two transparent effort assumptions; the buffer is a risk test, never an empirical forecast.
+function estimatedHours(account, effortMode='baseline'){
+ if(!['baseline','buffered'].includes(effortMode))throw Error('Unknown effort assumption');
+ if(!Number.isFinite(account.hours)||account.hours<=0)throw Error('Invalid action effort');
+ return effortMode==='baseline'?account.hours:Math.ceil(account.hours*1.25*2)/2;
+}
+function makePlan(accounts,{capacity=12,strategy='pipeline',now=DEMO_DATE,effortMode='baseline'}={}){
+ if(!Number.isFinite(capacity)||capacity<0||capacity>1000)throw Error('Capacity must be a number from 0 to 1000');
+ if(!['pipeline','balanced'].includes(strategy))throw Error('Unknown planning policy');
+ if(!['baseline','buffered'].includes(effortMode))throw Error('Unknown effort assumption');
+ const eligible=evaluatedAccounts(accounts,now).filter(a=>a.assessment.eligible);
+ const urgent=eligible.filter(a=>a.assessment.tier==='P1');
+ const hours=a=>estimatedHours(a,effortMode);
+ let selected=[],used=0;
+ const accept=a=>{if(used+hours(a)<=capacity+1e-9){selected.push(a);used+=hours(a);return true;}return false;};
+ for(const a of urgent)accept(a);
+ const conflict=urgent.some(a=>!selected.includes(a));
+ if(!conflict){
+   if(strategy==='balanced'){
+     const research=eligible.filter(a=>a.assessment.tier==='P3').sort((a,b)=>(b.assessment.fit??0)-(a.assessment.fit??0))[0];
+     if(research)accept(research);
+   }
+   for(const a of eligible)if(!selected.includes(a))accept(a);
+ }
+ const deferred=eligible.filter(a=>!selected.includes(a));
+ const reasons=Object.fromEntries(deferred.map(a=>[a.id, conflict?'Urgent commitments cannot all be covered; manager review required.':hours(a)>capacity-used?'Not enough remaining time with the selected effort assumption.':'Lower priority under the chosen planning policy.']));
+ const deadlineRisks=eligible.filter(a=>Number.isFinite(epoch(a.due))&&epoch(a.due)<epoch(now));
+ const urgentHours=urgent.reduce((n,a)=>n+hours(a),0);
+ return {modelVersion:MODEL_VERSION,strategy,capacity,effortMode,used:Math.round(used*100)/100,unused:Math.round((capacity-used)*100)/100,
+  selected,deferred,reasons,conflict,urgentHours,urgentCount:urgent.length,uncoveredUrgent:urgent.filter(a=>!selected.includes(a)),
+  deadlineRisks,plannedHours:Object.fromEntries(eligible.map(a=>[a.id,hours(a)])),
+  baseTotalHours:eligible.reduce((n,a)=>n+a.hours,0),adjustedTotalHours:eligible.reduce((n,a)=>n+hours(a),0),
+  explanation:conflict?'Not all urgent commitments fit. No lower-priority work is added until the shortfall is reviewed.':strategy==='balanced'?'Cover urgent work, reserve one unengaged research activity, then fill remaining capacity.':'Protect active and engaged accounts before speculative research.'};
+}
+function compareStrategies(accounts,capacity,now=DEMO_DATE,effortMode='baseline'){
+ return {pipeline:makePlan(accounts,{capacity,strategy:'pipeline',now,effortMode}),balanced:makePlan(accounts,{capacity,strategy:'balanced',now,effortMode})};
+}
+function simulateAccountChange(accounts,id,{hours,stage,confirmedNeed,dimension,level,reason}={}){
+ return accounts.map(a=>{if(a.id!==id)return a;
+ if(!reason||reason.trim().length<8)throw Error('Provide at least 8 characters explaining the hypothetical change.');
+ const b=structuredClone(a);if(hours!==undefined){if(!Number.isFinite(hours)||hours<.5||hours>24||hours*2%1!==0)throw Error('Action hours must be 0.5–24 in 0.5-hour steps');b.hours=hours;}
+ if(stage!==undefined){if(!['none','replied','discovery','evaluation'].includes(stage))throw Error('Unsupported scenario stage');b.stage=stage;b.confirmedNeed=stage==='discovery'||stage==='evaluation'?Boolean(confirmedNeed):false;b.action=({none:'Investigate potential use case (what-if)',replied:'Prepare discovery call (what-if)',discovery:'Confirm buying committee and decision timeline (what-if)',evaluation:'Review evaluation plan and buyer objections (what-if)'})[stage];}
+ if(dimension!==undefined){if(!['industry','scale','complexity','tech'].includes(dimension))throw Error('Invalid assessment dimension');if(level!==null&&(!Number.isInteger(level)||level<0||level>4))throw Error('Invalid evidence level');
+ const sid=`WHATIF-${a.id}-${dimension}`;b.evidence=b.evidence.filter(e=>e.id!==sid);
+ b.scored[dimension]={level,sourceId:level===null?null:sid,note:reason.trim()};if(level!==null)b.evidence.push({id:sid,kind:'Scenario assumption',claim:reason.trim(),date:DEMO_DATE,synthetic:true});}
+ b.scenarioModified=true;b.scenarioReason=reason.trim();return b;
+ });
+}
+function validateDataset(accounts){const errs=[];for(const a of accounts){if(!a.crmId)errs.push(`${a.name}: missing CRM ID`);if(!a.action||!Number.isFinite(a.hours)||a.hours<=0)errs.push(`${a.name}: invalid action`);if(!Number.isFinite(epoch(a.crmUpdated)))errs.push(`${a.name}: invalid CRM date`);for(const d of RUBRIC){const s=a.scored?.[d.key];if(s?.level!=null&&(!Number.isInteger(s.level)||s.level<0||s.level>4||!a.evidence.some(e=>e.id===s.sourceId)))errs.push(`${a.name}: broken evidence link for ${d.key}`);}}return errs;}
+
+
+// Entirely synthetic account-development evidence, never presented as real market research.
+const ACCOUNT_CASES = {
+ a2:{headline:'Cross-site handoffs may be slowing exception resolution',hypothesis:'Northline could benefit from a single escalation owner and workflow record across warehouses.',value:'Explore whether shorter exception-resolution cycles and clearer ownership justify a workflow pilot.',stakeholders:[['Operations Director','Problem owner','Suggested, not confirmed'],['IT Manager','Technical gatekeeper','Workshop invite recorded'],['Finance Director','Economic buyer','Not identified']],questions:['How are cross-site exceptions logged and assigned today?','Which unresolved handoffs most affect customer commitments?','Who would approve spending and what evidence would they require?'],kill:'Pause if the buyer confirms the current ERP already resolves these exceptions reliably without manual coordination.',evidence:[
+{id:'n1',tag:'Discovery note',statement:'Operations lead described recurring cross-site handoff confusion.',stance:'supports',quality:'buyer',date:'2026-10-23'},
+{id:'n2',tag:'Technical note',statement:'IT team said the ERP already supports automated exception workflows in some locations.',stance:'challenges',quality:'buyer',date:'2026-10-24'},
+{id:'n3',tag:'Research assumption',statement:'A common exception view would reduce coordination time.',stance:'supports',quality:'hypothesis',date:'2026-10-24'},
+{id:'n4',tag:'CRM activity',statement:'Operations lead agreed to a multi-stakeholder workshop.',stance:'supports',quality:'buyer',date:'2026-10-25'}]},
+ a1:{headline:'Manual warehouse escalations create a possible adoption case',hypothesis:'A consolidated exception tracker might help CanalTrade standardize processes across two distribution sites.',value:'Determine whether the coordination workload is material and whether integration can be scoped affordably.',stakeholders:[['Head of Operations','Problem owner','Reported in discovery'],['IT Integration Lead','Technical reviewer','Review pending'],['CFO','Budget authority','Unverified']],questions:['Which exception types currently require manual escalation?','What systems own the authoritative process status?','What implementation effort would be acceptable?'],kill:'Pause if API restrictions make any credible, low-friction deployment impossible.',evidence:[{id:'c1',tag:'Buyer discovery',statement:'Buyer reported repeated manual escalation across two warehouses.',stance:'supports',quality:'buyer',date:'2026-10-22'},{id:'c2',tag:'Technical request',statement:'Buyer requested a feasibility review before price or timing discussions.',stance:'challenges',quality:'buyer',date:'2026-10-25'},{id:'c3',tag:'Analyst hypothesis',statement:'Standardized escalation could reduce delayed decisions.',stance:'supports',quality:'hypothesis',date:'2026-10-24'}]},
+ a5:{headline:'Excellent structural fit, but no verified buying trigger',hypothesis:'NovaRetail could have value from standardizing multi-hub process ownership.',value:'Research whether exception handling is a genuine executive priority before recommending outreach.',stakeholders:[['VP Supply Chain','Potential champion','Unverified'],['Head of IT','Technical reviewer','Unverified'],['COO','Potential sponsor','Unverified']],questions:['Is coordination between hubs a current strategic concern?','Are pain points documented or inferred from company size?','What evidence would indicate a current buying project?'],kill:'Defer if no reliable evidence of an active operational issue or relevant purchasing initiative emerges.',evidence:[{id:'v1',tag:'Company profile',statement:'The fictional company operates several distribution hubs.',stance:'supports',quality:'desk',date:'2026-10-24'},{id:'v2',tag:'Analyst assumption',statement:'Large operational footprint may imply approval coordination pain.',stance:'supports',quality:'hypothesis',date:'2026-10-24'},{id:'v3',tag:'CRM snapshot',statement:'No customer conversation or buying signal has been recorded.',stance:'challenges',quality:'desk',date:'2026-10-25'}]},
+ a4:{headline:'Exploratory interest with uncertain technical relevance',hypothesis:'RetailLink may need cross-team visibility during store replenishment exceptions.',value:'Use discovery to distinguish operational pain from general product curiosity.',stakeholders:[['Supply Chain Lead','Possible champion','Requested discussion'],['Systems Lead','Potential evaluator','Unknown'],['Finance Manager','Budget authority','Unknown']],questions:['What triggered the request for an exploratory discussion?','Which workflows currently fail during replenishment?','How is the buying decision made?'],kill:'Pause if the discussion reveals no recurring operational problem that the product solves.',evidence:[{id:'r1',tag:'CRM activity',statement:'A contact requested an exploratory discussion.',stance:'supports',quality:'buyer',date:'2026-10-25'},{id:'r2',tag:'Technical unknown',statement:'No ERP integration requirements have been verified.',stance:'challenges',quality:'desk',date:'2026-10-25'}]}
+};
+const DEFAULT_CASE={headline:'Research the buyer before recommending a commercial pursuit',hypothesis:'The account may have operational workflow coordination needs; this is not yet verified.',value:'Explore a plausible workflow problem and validate whether a targeted discussion is warranted.',stakeholders:[['Operations Manager','Possible problem owner','Hypothesis'],['IT Lead','Possible technical reviewer','Hypothesis'],['Finance Lead','Potential budget holder','Unknown']],questions:['What specific operational challenge would justify change?','What evidence confirms this challenge exists?','Who would be involved in solution selection?'],kill:'Do not pursue until a relevant business problem and permissible contact route have been established.',evidence:[{id:'generic-1',tag:'Research gap',statement:'No account-specific buying problem has been verified for this case.',stance:'challenges',quality:'hypothesis',date:'2026-10-26'}]};
+
+
+// All records and identifiers below are synthetic and deliberately non-routable.
+// These sample fields illustrate a CRM + research + seller-notes environment.
+const COMMERCIAL = {
+ a1:{route:'Inbound request',deal:'FB-D-0248',status:'Solution review',acv:24000,last:'2026-10-25',touch:'Technical feasibility request',segment:'Mid-market wholesale',buyer:'Head of Operations'},
+ a2:{route:'Industry referral',deal:'FB-D-0251',status:'Discovery',acv:36000,last:'2026-10-25',touch:'Operations stakeholder workshop agreed',segment:'Mid-market distribution',buyer:'Operations Director'},
+ a3:{route:'Trade directory',deal:null,status:'Initial response',acv:null,last:'2026-10-25',touch:'Positive reply to introductory note',segment:'Mid-market wholesale',buyer:'Operations Manager'},
+ a4:{route:'Website inquiry',deal:null,status:'Exploratory meeting',acv:null,last:'2026-10-25',touch:'Discovery discussion requested',segment:'Retail supply',buyer:'Supply Chain Lead'},
+ a5:{route:'Target account research',deal:null,status:'Not contacted',acv:null,last:null,touch:'No buyer engagement recorded',segment:'Enterprise retail supply',buyer:'Unknown'},
+ a6:{route:'Industry directory',deal:null,status:'Not contacted',acv:null,last:null,touch:'Research required',segment:'Food distribution',buyer:'Unknown'},
+ a7:{route:'Legacy lead list',deal:null,status:'Fit review',acv:null,last:null,touch:'Below ideal account profile',segment:'Import agency',buyer:'Unknown'},
+ a8:{route:'Industry research',deal:null,status:'Research incomplete',acv:null,last:null,touch:'Integration information missing',segment:'Industrial wholesale',buyer:'Unknown'},
+ a9:{route:'Inbound inquiry',deal:'FB-D-0203',status:'Closed lost',acv:22000,last:'2026-10-20',touch:'Buyer selected existing ERP module',segment:'Industrial wholesale',buyer:'Commercial Director'},
+ a10:{route:'Outbound research',deal:null,status:'Out of territory',acv:null,last:null,touch:'Territory gate',segment:'Distribution',buyer:'Unknown'},
+ a11:{route:'Legacy CRM list',deal:null,status:'Do not contact',acv:null,last:null,touch:'Contact preference restriction',segment:'Retail supply',buyer:'Restricted'},
+};
+const DATA_LINEAGE = [
+ {field:'Company, industry, region, employee band',system:'CRM company record + approved research',workflow:'Matched by CRM record ID; validate stale or missing fields',owner:'Sales Operations / research'},
+ {field:'Contact and buying roles',system:'CRM contact associations + meeting notes',workflow:'Role is provisional until buyer-confirmed',owner:'Account owner'},
+ {field:'Deal stage, amount, activity dates',system:'CRM deal and engagement records',workflow:'Read-only snapshot; not overwritten by GrowthFlow',owner:'Sales team'},
+ {field:'Operational pain points and objections',system:'Buyer discovery and meeting notes',workflow:'Linked to source record, date and confidence',owner:'Business Development'},
+ {field:'Company strategic context',system:'Public company sites and approved data providers',workflow:'Capture source, capture date and research status',owner:'Business Development research'},
+ {field:'Customer-fit and commercial hypothesis',system:'GrowthFlow evaluation',workflow:'Explicit assumptions, versioned criteria, buyer validation',owner:'Business Development'},
+ {field:'Pursuit decision and weekly allocation',system:'GrowthFlow planning records',workflow:'Decision audit only, with no CRM write-back',owner:'BD lead / manager'}
+];
+const REF_IDS = {
+ a2:{n1:'MEET-FB-1002-01',n2:'NOTE-FB-1002-02',n3:'RESEARCH-FB-1002-A',n4:'MEET-FB-1002-03',n5:'EMAIL-FB-1002-04'},
+ a1:{c1:'MEET-FB-1001-01',c2:'NOTE-FB-1001-02',c3:'RESEARCH-FB-1001-A',c4:'NOTE-FB-1001-03'},
+ a4:{r1:'MEET-FB-1004-01',r2:'RESEARCH-FB-1004-A'},
+ a5:{v1:'RESEARCH-FB-1005-A',v2:'RESEARCH-FB-1005-B',v3:'CRM-FB-1005-C'}
+};
+function evidenceRef(accountId,e){return e.sourceRef || REF_IDS[accountId]?.[e.id] || `WORK-FB-${accountId.toUpperCase()}-${String(e.id).toUpperCase()}`;}
+function commercialFor(id){return COMMERCIAL[id]||{route:'Unassigned',deal:null,status:'Research only',acv:null,last:null,touch:'No CRM activities recorded',segment:'Unassigned',buyer:'Unknown'};}
+const SCENARIO_UPDATES={
+ a2:{id:'n5',sourceRef:'EMAIL-FB-1002-04',tag:'Technical follow-up',date:'2026-10-26',quality:'buyer',stance:'supports',resolutionOf:'n2',statement:'IT clarified that the current ERP automates dispatch routing but does not cover multi-site exception approvals. The integration workshop remains required.',outcome:'Buyer evidence resolved the original overlap objection; implementation risk still needs qualification.'},
+ a1:{id:'c4',blocking:true,sourceRef:'NOTE-FB-1001-03',tag:'Integration feasibility',date:'2026-10-26',quality:'buyer',stance:'challenges',statement:'Technical reviewer said required ERP event access is not available for the proposed pilot timeline. No alternative interface was confirmed.',outcome:'Commercial review should remain paused until a feasible integration path is demonstrated.'}
+};
+
+
+// Explicit source provenance and freshness rules for a synthetic CRM+BD scenario.
+// "Buyer-sourced" means buyer-attributed *inside the demo*, not externally verified.
+
+
+const EVIDENCE_POLICY_VERSION='0.8.0';
+const MAX_BUYER_AGE_DAYS=60;
+const MAX_DESK_AGE_DAYS=90;
+const DAY=86400000;
+function dayNumber(date){if(!/^\d{4}-\d{2}-\d{2}$/.test(String(date||'')))return NaN;const time=Date.parse(date+'T00:00:00Z');return Number.isFinite(time)&&new Date(time).toISOString().slice(0,10)===date?time/DAY:NaN;}
+function inspectEvidence(accountId,caseData,asOf=DEMO_DATE,{skipSourceMapping=false}={}){
+ const today=dayNumber(asOf);
+ if(!Number.isFinite(today))throw new Error('Invalid audit reference date');
+ const evidence=caseData?.evidence||[];
+ const ids=new Set();
+ const records=evidence.map(item=>{
+  const age=today-dayNumber(item.date);
+  const sourceRef=evidenceRef(accountId,item);
+  const errors=[];
+  if(!item.id||ids.has(item.id))errors.push('Missing or duplicate evidence ID');
+  ids.add(item.id);
+  if(!skipSourceMapping&&(!sourceRef||sourceRef.startsWith('WORK-FB')))errors.push('Synthetic reference requires manual source mapping');
+  if(!Number.isFinite(age))errors.push('Date missing or invalid');
+  else if(age<0)errors.push('Event is future-dated relative to snapshot');
+  if(!['buyer','desk','hypothesis'].includes(item.quality))errors.push('Unrecognized evidence category');
+  const kind=item.quality==='buyer'?'Buyer-attributed demo record':item.quality==='desk'?'Illustrative desk research':'Analyst assumption';
+  const maxAge=item.quality==='buyer'?MAX_BUYER_AGE_DAYS:MAX_DESK_AGE_DAYS;
+  const stale=item.quality!=='hypothesis'&&Number.isFinite(age)&&age>maxAge;
+  const isHypothesis=item.quality==='hypothesis';
+  return {...item,sourceRef,kind,ageDays:Number.isFinite(age)?age:null,stale,errors,unverified:isHypothesis,
+   assurance:errors.length?'Check source':isHypothesis?'Unverified':stale?'Refresh needed':'Current in demo'};
+ });
+ const byId=new Map(records.map(r=>[r.id,r]));
+ for(const item of records){
+  if(!item.resolutionOf)continue;
+  const original=byId.get(item.resolutionOf);
+  if(!original||original.id===item.id||item.quality!=='buyer'||item.stance!=='supports'||item.errors.length||original.errors.length||item.ageDays===null||original.ageDays===null||item.ageDays>original.ageDays){
+   item.errors.push('Invalid objection-resolution link');item.assurance='Check source';
+  }
+ }
+ const validBuyer=records.filter(r=>r.quality==='buyer'&&r.stance==='supports'&&!r.stale&&!r.errors.length);
+ const invalid=records.filter(r=>r.errors.length);
+ const staleBuyer=records.filter(r=>r.quality==='buyer'&&r.stale);
+ const staleResearch=records.filter(r=>r.quality==='desk'&&r.stale);
+ const assumptions=records.filter(r=>r.quality==='hypothesis');
+ const resolutions=records.filter(r=>r.resolutionOf&&!r.errors.length);
+ return {records,validBuyerCount:validBuyer.length,invalidCount:invalid.length,staleBuyerCount:staleBuyer.length,staleResearchCount:staleResearch.length,assumptionsCount:assumptions.length,validResolutions:resolutions,
+  canSupportAdvance:validBuyer.length>0&&!invalid.some(r=>r.quality==='buyer')&&!staleBuyer.some(r=>r.stance==='supports'),
+  summary:invalid.length?`${invalid.length} evidence ${invalid.length===1?'record needs':'records need'} source correction`:staleBuyer.length?`${staleBuyer.length} buyer ${staleBuyer.length===1?'record requires':'records require'} freshness review`:assumptions.length?`${assumptions.length} working ${assumptions.length===1?'assumption remains':'assumptions remain'} unconfirmed`:'No source exceptions under the demo policy',
+  disclaimer:'All records and source IDs in this demo are synthetic. Current means current against the sample snapshot, not independently verified.'};
+}
+
+
+
+
+
+const THESIS_VERSION='0.8.0';
+function thesisFor(account,override={}){
+ const base=ACCOUNT_CASES[account.id]||DEFAULT_CASE;
+ return {...structuredClone(base),...structuredClone(override),evidence:structuredClone(override.evidence||base.evidence),stakeholders:structuredClone(base.stakeholders),questions:structuredClone(base.questions)};
+}
+function activeChallenges(caseData,accountId){
+ const resolved=new Set(inspectEvidence(accountId||'source-audit',caseData,undefined,{skipSourceMapping:!accountId}).validResolutions.map(e=>e.resolutionOf));
+ return caseData.evidence.filter(e=>(e.stance==='challenges'||e.stance==='unresolved')&&!resolved.has(e.id));
+}
+function reviewThesis(account,caseData,requested='research'){
+ const positives=caseData.evidence.filter(e=>e.stance==='supports'&&e.quality==='buyer');
+ const challenges=activeChallenges(caseData,account.id);
+ const hypotheses=caseData.evidence.filter(e=>e.quality==='hypothesis');
+ const resolved=caseData.evidence.filter(e=>e.resolutionOf).length;
+ const hasBuyer=positives.length>0;
+ const hardStop=Boolean(account.doNotContact)||['closed_lost','closed_won'].includes(account.stage)||!['DE','NL'].includes(account.country);
+ const isActive=['discovery','evaluation'].includes(account.stage)&&account.confirmedNeed;
+ const missing=[];
+ if(!caseData.hypothesis?.trim())missing.push('Missing problem hypothesis');
+ if(!caseData.value?.trim())missing.push('Missing value proposition');
+ if(!caseData.kill?.trim())missing.push('Missing disqualification condition');
+ if(!hasBuyer)missing.push('No positive buyer-sourced evidence');
+ if(challenges.length)missing.push(`${challenges.length} active challenge(s) require a documented buyer response`);
+ let recommendation=hardStop?'Do not pursue':isActive&&hasBuyer&&challenges.length===0?'Evidence review before progression':hasBuyer?'Validate before advancing':'Research only';
+ if(hardStop)missing.unshift('CRM restriction, closed outcome or out-of-territory account');
+ const complete=!!(caseData.hypothesis?.trim()&&caseData.value?.trim()&&caseData.kill?.trim());
+ const audit=inspectEvidence(account.id,caseData);
+ if(audit.staleBuyerCount)missing.push('Buyer evidence is older than the freshness policy');
+ if(audit.invalidCount)missing.push('Source identity or chronology must be verified');
+ const eligibleToPursue=!hardStop&&hasBuyer&&isActive&&challenges.length===0&&complete&&audit.canSupportAdvance;
+ if(eligibleToPursue)recommendation='Advance to a controlled next step';
+ const allowed=requested==='pursue'?eligibleToPursue:requested==='discovery'?(!hardStop&&hasBuyer):true;
+ const requestReason=requested==='pursue'&&!allowed?'Cannot approve active pursuit while restrictions, evidence gaps or unresolved objections remain':requested==='discovery'&&!allowed?'Discovery preparation requires buyer evidence and no restriction':null;
+ return {positives:positives.length,challenges:challenges.length,hypotheses:hypotheses.length,resolved,hasBuyer,hardStop,isActive,missing,recommendation,allowed,requestReason,eligibleToPursue};
+}
+function appendScenarioEvidence(caseData,accountId){
+ const event=SCENARIO_UPDATES[accountId];
+ if(!event)throw new Error('No predefined follow-up for this account');
+ if(caseData.evidence.some(e=>e.id===event.id))return caseData;
+ return {...caseData,evidence:[...caseData.evidence,structuredClone(event)]};
+}
+// Retained for older test fixtures; the UI no longer allows changing historical evidence in place.
+function reviseEvidence(caseData,id,stance){
+ if(!['supports','challenges','unresolved'].includes(stance))throw Error('Invalid evidence stance');
+ if(!caseData.evidence.some(e=>e.id===id))throw Error('Evidence record not found');
+ return {...caseData,evidence:caseData.evidence.map(e=>e.id===id?{...e,stance}:e)};
+}
+function makeBrief(account,caseData,decision,review){
+ const c=commercialFor(account.id);
+ const lines=[`# ${account.name} | Account review`,'','**Synthetic portfolio scenario. Not real customer research or an active sales engagement.**',`CRM company: ${account.crmId}`,`CRM deal: ${c.deal||'None'}`,`Pipeline status: ${c.status}`,`Owner: ${account.owner}`,`Proposed annual contract value: ${c.acv===null?'Not yet estimated':`EUR ${c.acv.toLocaleString('en-US')} (illustrative, not revenue)`}`,`Requested decision: ${decision}`,`Assessment: ${review.recommendation}`,'',
+ '## Commercial hypothesis',caseData.headline,caseData.hypothesis,'','## Customer value to validate',caseData.value,'','## Evidence register',...caseData.evidence.map(e=>`- [${e.stance.toUpperCase()} | ${e.quality}] ${e.date} · ${evidenceRef(account.id,e)} · ${e.statement}${e.resolutionOf?` [clarifies ${evidenceRef(account.id,{id:e.resolutionOf})}]`:''}`),'','## Buying group',...caseData.stakeholders.map(x=>`- ${x[0]}: ${x[1]} (${x[2]})`),'','## Discovery agenda',...caseData.questions.map((q,i)=>`${i+1}. ${q}`),'','## Stop condition',caseData.kill,'','## Open questions',...(review.missing.length?review.missing.map(x=>`- ${x}`):['- No remaining rule-based blockers; human validation is still needed.']),'',`Prepared in GrowthFlow ${THESIS_VERSION}. CRM records were not modified.`];
+ return lines.join('\n');
+}
+
+
+
+
+
+// v0.7 case-development logic. All input records are synthetic.
+const JOURNEY_VERSION = '0.8.0';
+const CASE_IDS = ['a2','a1','a5'];
+const CASE_STORIES = {
+  a2:{angle:'Active discovery · competing technical explanations',challenge:'Operations describes cross-site handoff delays, while IT reports that the ERP already automates some exception workflows.',goal:'Verify the uncovered gap, align Operations and IT, and decide whether a tightly scoped workshop is justified.',buyer:'Operations lead and IT reviewer',next:'Confirm the boundary of ERP functionality in a joint discovery workshop.',after:'A buyer clarification distinguishes dispatch routing from multi-site exception approvals. The commercial case can progress to a controlled validation step, not a guaranteed sale.'},
+  a1:{angle:'Inbound interest · unresolved integration feasibility',challenge:'An operations lead wants fewer manual escalations, but the required ERP event access may be unavailable.',goal:'Validate the feasibility of a narrowly scoped deployment before assigning sales capacity to pricing discussions.',buyer:'Head of Operations and IT Integration Lead',next:'Ask IT to demonstrate accessible ERP events and a viable integration approach.',after:'The buyer-side technical reviewer confirms that required ERP events are inaccessible in the pilot window. Put the opportunity on hold rather than invent an integration solution.'},
+  a5:{angle:'Strong company profile · no buyer signal',challenge:'A multi-hub retail business looks like a strong fit, but there is no verified customer problem or permission to assume buying interest.',goal:'Distinguish a plausible research target from an active sales opportunity.',buyer:'No buyer confirmed',next:'Validate the possible workflow problem through permissible research; do not claim the company is sales-qualified.',after:'Without buyer evidence, the account remains research-only even if its structural fit score is high.'}
+};
+function chronologicalEvidence(accountId,caseData){
+  const audit=inspectEvidence(accountId,caseData);
+  const resolved=new Set(audit.validResolutions.map(x=>x.resolutionOf));
+  return caseData.evidence.map((x,i)=>({
+    ...x,ref:evidenceRef(accountId,x),resolved:resolved.has(x.id),originalIndex:i,
+    category:x.quality==='hypothesis'?'Working assumption':x.resolutionOf?'Buyer clarification':x.stance==='challenges'?'Objection / gap':x.quality==='desk'?'Account research':'Buyer evidence'
+  })).sort((a,b)=>a.date.localeCompare(b.date)||a.originalIndex-b.originalIndex);
+}
+function commercialDecision(account,caseData){
+  const audit=inspectEvidence(account.id,caseData);
+  const review=reviewThesis(account,caseData,'pursue');
+  const events=chronologicalEvidence(account.id,caseData);
+  const materialBlock=caseData.evidence.some(e=>e.blocking===true&&e.quality==='buyer'&&e.stance==='challenges'&&!e.resolutionOf);
+  let choice='research',title='Continue qualification research',reason='The available records do not confirm a current buyer problem or active purchasing need.';
+  if(review.hardStop){choice='hold';title='Do not develop this account';reason='The CRM restriction, closed outcome, or market eligibility prevents an active pursuit.';}
+  else if(materialBlock){choice='hold';title='Pause pending technical feasibility';reason='The recorded buyer-side technical blocker makes the proposed pilot infeasible with current assumptions.';}
+  else if(review.eligibleToPursue&&audit.canSupportAdvance){choice='advance';title='Advance to controlled validation';reason='Recent buyer-attributed evidence supports a limited validation step. Budget and implementation still require validation.';}
+  else if(review.eligibleToPursue&&!audit.canSupportAdvance){choice='validate';title='Recheck evidence before progressing';reason='The buyer information is stale, inconsistent or lacks usable source records. Refresh evidence before approving active pursuit.';}
+  else if(review.hasBuyer){choice='validate';title='Validate the open commercial question';reason=review.challenges?`${review.challenges} active ${review.challenges===1?'objection must':'objections must'} be investigated before advancing.`:'A buyer signal exists, but the commercial case or readiness remains incomplete.';}
+  const blockers=[...review.missing];
+  if(audit.invalidCount)blockers.push(`${audit.invalidCount} source integrity issue(s) need review`);
+  if(audit.staleBuyerCount)blockers.push(`${audit.staleBuyerCount} buyer record(s) older than the ${60}-day freshness policy`);
+  if(materialBlock)blockers.unshift('Buyer-side technical feasibility blocker');
+  return {
+    choice,title,reason,blockers,materialBlock,audit,
+    buyerEvidence:review.positives,openChallenges:activeChallenges(caseData,account.id).length,
+    evidenceCount:events.length,events,
+    evidenceGap:events.some(x=>x.quality==='hypothesis'),
+    linkedFollowUp:caseData.evidence.some(x=>x.resolutionOf),
+    hasNextScriptedEvent:Boolean(SCENARIO_UPDATES[account.id]&&!caseData.evidence.some(x=>x.id===SCENARIO_UPDATES[account.id].id)),
+    review,commercial:commercialFor(account.id)
+  };
+}
+const ACTIONS = [
+ {id:'advance',name:'Advance to solution validation',details:'Proceed with a defined workshop or technical review; not a close or revenue forecast.'},
+ {id:'validate',name:'Investigate open questions',details:'Arrange discovery or feasibility conversations to clarify uncertainty.'},
+ {id:'research',name:'Research before engagement',details:'Improve the company and problem hypothesis before committing outreach capacity.'},
+ {id:'hold',name:'Pause the pursuit',details:'Do not allocate active commercial effort until a significant blocker changes.'}
+];
+function assessChoice(account,caseData,choice){
+  if(!ACTIONS.some(x=>x.id===choice))throw Error('Invalid commercial decision');
+  const result=commercialDecision(account,caseData);
+  if(choice==='advance'&&(result.choice!=='advance'))return {allowed:false,aligned:false,reason:'Advancing is blocked: the recorded evidence does not support a controlled pursuit. '+result.reason,recommended:result.choice};
+  if(choice==='advance'&&result.choice==='advance')return {allowed:true,aligned:true,reason:'A controlled validation step is supported by the current buyer evidence. It is not a revenue commitment.',recommended:result.choice};
+  if(choice===result.choice)return {allowed:true,aligned:true,reason:result.reason,recommended:result.choice};
+  return {allowed:true,aligned:false,reason:`Permissible as a cautious manual choice, but the rules-based recommendation is “${ACTIONS.find(x=>x.id===result.choice).name}”. Document your reasoning before acting.`,recommended:result.choice};
+}
+function makeCaseSummary(account,caseData,choice,result,decisionNote='',isSaved=false){
+  const analysis=commercialDecision(account,caseData);
+  const story=CASE_STORIES[account.id];
+  return [
+    `# ${account.name} · Account development case`,
+    '', '**Portfolio demonstration: all records, companies, conversations and monetary values are synthetic.**',
+    `**CRM company:** ${account.crmId}`, `**CRM deal:** ${analysis.commercial.deal||'None recorded'}`,
+    `**Account owner:** ${account.owner}`, '**Sales outcomes:** No real-world customer or revenue outcome is claimed.',
+    '', '## Commercial objective',story?.goal||'Research and qualify this account.',
+    '', '## Buyer problem',story?.challenge||'No buyer problem yet established.',
+    '', '## Evidence integrity', `Source assessment: ${analysis.audit.summary}`, 'Source policy: v0.8.0', 'All source identifiers are synthetic, not independently verified.', '', '## Evidence chronology',
+    ...analysis.events.map(x=>`- ${x.date} | ${x.ref} | ${x.category} | ${x.statement}${x.resolved?' [resolved by subsequent buyer evidence]':''}`),
+    '', '## Strategic hypothesis',caseData.hypothesis,'', '## Value to validate',caseData.value,
+    '', '## Commercial decision',
+    `Action status: ${isSaved?'Saved local review':'DRAFT - not recorded'}`,`Proposed action: ${ACTIONS.find(x=>x.id===choice)?.name||'Not selected'}`,
+    `Rules-based recommendation: ${analysis.title}`,
+    `Decision note: ${decisionNote||result?.reason||analysis.reason}`,
+    '', '## Missing information / blockers',...(analysis.blockers.length?analysis.blockers.map(x=>`- ${x}`):['- No rule-based blocker remains; human validation is still required.']),
+    '', '## Stakeholders to investigate',...caseData.stakeholders.map(x=>`- ${x[0]} · ${x[1]} · ${x[2]}`),
+    '', '## Discovery questions',...caseData.questions.map((q,i)=>`${i+1}. ${q}`),
+    '', '## Stop condition',caseData.kill,
+    '', `Generated from GrowthFlow ${JOURNEY_VERSION}. No CRM records were modified.`
+  ].join('\n');
+}
+
+
+// Illustrative HubSpot-style payloads, not live customer records.
+const CRM_EXAMPLES = {
+ 'company-deal': {company:{id:'1002',properties:{name:'Northline Distribution GmbH',industry:'DISTRIBUTION',country:'Germany',numberofemployees:'320'},associations:{deals:{results:[{id:'2251',type:'company_to_deal'}]},notes:{results:[{id:'3391',type:'company_to_note'}]}}},notes:[{id:'3391',properties:{hs_timestamp:'2026-10-25T09:00:00Z'}}],deals:[{id:'2251',properties:{dealname:'Workflow coordination evaluation',dealstage:'qualifiedtobuy',pipeline:'default',amount:'36000',closedate:null}}]},
+ 'company-only':{company:{id:'1005',properties:{name:'NovaRetail GmbH',industry:'RETAIL',country:'Germany',numberofemployees:'390'},associations:{}},deals:[]},
+ 'closed-deal':{company:{id:'1009',properties:{name:'RheinCargo Products GmbH',industry:'WHOLESALE',country:'Germany',numberofemployees:'230'},associations:{deals:{results:[{id:'2203',type:'company_to_deal'}]}}},deals:[{id:'2203',properties:{dealname:'Operational pilot proposal',dealstage:'closedlost',pipeline:'default',amount:'22000',closedate:'2026-10-20'}}]}
+};
+function interpretCrmSnapshot(payload){
+ const p=payload?.company?.properties||{};
+ const ds=Array.isArray(payload?.deals)?payload.deals:[];
+ const linked=new Set((payload?.company?.associations?.deals?.results||[]).map(x=>String(x.id)));
+ const deals=ds.filter(d=>linked.has(String(d.id)));
+ const linkedNotes=new Set((payload?.company?.associations?.notes?.results||[]).map(x=>String(x.id)));
+ const notes=(Array.isArray(payload?.notes)?payload.notes:[]).filter(n=>linkedNotes.has(String(n.id))); 
+ const employee=Number(p.numberofemployees);
+ return {name:p.name||'Unnamed company',crmId:String(payload?.company?.id||'Unknown'),country:p.country||'Unknown',employees:Number.isInteger(employee)&&employee>0?employee:null,
+  linkedNoteCount:notes.length,noteIds:notes.map(n=>String(n.id)),noteCaution:'An associated note is metadata only; it does not confirm a buyer problem or contact permission.',linkedDealCount:deals.length,dealIds:deals.map(d=>String(d.id)),dealStages:deals.map(d=>String(d.properties?.dealstage||'Not provided')),
+  hasVerifiedBuyerNeed:false,contactPermission:'Not verified',decision:'Research / validate',dealCaution:deals.length?'Deal records exist; their internal stage codes do not establish verified buying need.':'No associated deal; do not create an imaginary commercial opportunity.'};
+}
+
+
+
+
+function initThesis({getAccounts,notify,escape,goPage}){
+ const $=id=>document.getElementById(id);
+ const storeKey='growthflow_v06_reviews';
+ const load=()=>{try{const d=JSON.parse(sessionStorage.getItem(storeKey)||'{}');return d&&typeof d==='object'&&!Array.isArray(d)?d:{}}catch{return {}}};
+ let drafts=load(),current='a2',decision='research',lastSaved=null,canPersist=true;
+ const e=escape;
+ const cases=()=>getAccounts();
+ const account=()=>cases().find(x=>x.id===current)||cases()[0];
+ const data=()=>thesisFor(account(),drafts[current]||{});
+ const persisted=()=>{try{sessionStorage.setItem(storeKey,JSON.stringify(drafts));canPersist=true}catch{canPersist=false}};
+ const euro=n=>n==null?'Not yet qualified':new Intl.NumberFormat('en-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+ const textField=(id,label,value,desc,rows=3)=>`<label class="thesis-label" for="${id}">${label}</label><textarea class="thesis-edit" id="${id}" rows="${rows}" maxlength="1200">${e(value)}</textarea><div class="thesis-hint">${desc}</div>`;
+ const evidenceItem=(x,a,t)=>{
+   const resolved=t.evidence.some(z=>z.resolutionOf===x.id&&z.quality==='buyer');
+   const type=x.quality==='buyer'?'Buyer conversation / CRM activity':x.quality==='desk'?'Account research / CRM record':'BD working assumption';
+   return `<article class="thesis-evidence ${e(x.stance)}"><div class="thesis-evidence-meta"><span>${e(x.date)} · ${e(evidenceRef(a.id,x))}</span><span class="thesis-chip">${e(type)}</span></div><div class="thesis-evidence-text">${e(x.statement)}</div><div class="thesis-evidence-bottom"><span class="thesis-stance">${resolved?'RESOLVED BY FOLLOW-UP':x.resolutionOf?'FOLLOW-UP / CLARIFICATION':x.stance==='supports'?'SUPPORTING EVIDENCE':x.stance==='challenges'?'OPEN OBJECTION':'NOT YET RESOLVED'}</span><span class="thesis-source-label">${e(x.tag)}${x.resolutionOf?' · clarifies '+e(evidenceRef(a.id,{id:x.resolutionOf})):''}</span></div></article>`;
+ };
+ function render(){const a=account();if(!a)return;const t=data(),v=reviewThesis(a,t,decision),c=commercialFor(a.id);
+  $('thesis-account-select').innerHTML=cases().map(z=>`<option value="${e(z.id)}" ${a.id===z.id?'selected':''}>${e(z.name)}</option>`).join('');
+  $('thesis-account-sub').textContent=`${a.sector} · ${a.country} · Company record ${a.crmId}`;
+  $('thesis-header').textContent=t.headline;
+  $('thesis-status').textContent=v.recommendation;
+  $('thesis-diagnostics').innerHTML=[['Buyer-sourced observations',v.positives],['Open objections',v.challenges],['Working assumptions',v.hypotheses]].map(([label,value])=>`<div class="thesis-signal"><strong>${value}</strong><small>${label}</small></div>`).join('');
+  $('thesis-commercial').innerHTML=`<div class="commercial-fact"><small>Account owner</small><strong>${e(a.owner)}</strong></div><div class="commercial-fact"><small>Origin</small><strong>${e(c.route)}</strong></div><div class="commercial-fact"><small>CRM opportunity</small><strong>${e(c.deal||'None opened')}</strong></div><div class="commercial-fact"><small>Current status</small><strong>${e(c.status)}</strong></div><div class="commercial-fact"><small>Indicative annual value</small><strong>${e(euro(c.acv))}</strong></div><div class="commercial-fact"><small>Latest buyer activity</small><strong>${e(c.last||'Not recorded')}</strong></div>`;
+  $('thesis-proof').innerHTML=t.evidence.map(x=>evidenceItem(x,a,t)).join('');
+  $('thesis-strategy').innerHTML=textField('thesis-hypothesis','Customer problem hypothesis',t.hypothesis,'Describe the possible business problem. Do not present assumptions as customer statements.')+textField('thesis-value','Proposed customer value',t.value,'What relevant outcome should be tested in discovery? Avoid fabricated ROI.')+textField('thesis-kill','Disqualification criterion',t.kill,'What evidence would justify pausing or stopping the pursuit?');
+  $('thesis-buyers').innerHTML=t.stakeholders.map(x=>`<div class="thesis-buyer"><strong>${e(x[0])}</strong><span>${e(x[1])}</span><small>${e(x[2])}</small></div>`).join('');
+  $('thesis-questions').innerHTML=t.questions.map(q=>`<li>${e(q)}</li>`).join('');
+  $('thesis-gaps').innerHTML=v.missing.length?v.missing.map(x=>`<div class="thesis-gap">${e(x)}</div>`).join(''):'<div class="thesis-pass">No rule-based blocker remains. Validate the commercial case before any actual customer action.</div>';
+  $('thesis-decision').value=decision;
+  $('thesis-outcome').innerHTML=`<strong>${e(v.recommendation)}</strong>${drafts[current]?.savedDecision?`<p class="thesis-last">Last recorded: <b>${e(drafts[current].savedDecision.decision)}</b> · local review</p>`:''}<p>${v.hardStop?'CRM restriction or account status blocks pursuit.':v.challenges?'Resolve the active objections using documented information before advancing.':v.hasBuyer?'Documented buyer observations are available. Confirm the buying process and next steps.':'Company fit alone does not prove a buying need.'}</p>${v.requestReason?`<span class="thesis-prohibition">${e(v.requestReason)}</span>`:''}`;
+  $('thesis-approve').disabled=!v.allowed;
+  const next=SCENARIO_UPDATES[a.id];const present=next&&t.evidence.some(x=>x.id===next.id);
+  $('thesis-event').innerHTML=next?`<div class="event-card"><div><small>DISCOVERY UPDATE · DEMONSTRATION</small><strong>${present?'Follow-up recorded':'New buyer information available'}</strong><p>${e(next.outcome)}</p></div>${present?'<span class="event-ready">Included in review</span>':'<button class="btn btn-dark" id="apply-discovery">Add buyer follow-up</button>'}</div>`:'<div class="note-box">There is no pre-scripted follow-up for this account. Research gaps and customer confirmation remain open.</div>';
+  $('thesis-save-note').textContent=lastSaved===current?(canPersist?'Review saved in this browser session.':'Stored only while this page remains open. Export a durable copy.'):'This workspace uses sample records; it does not change a CRM.';
+ }
+ const updateDraftFromFields=()=>{const a=account();const base=data();for(const [name,id] of [['hypothesis','thesis-hypothesis'],['value','thesis-value'],['kill','thesis-kill']]){const field=$(id);if(field)base[name]=field.value.trim();}drafts[a.id]=base;persisted();return base;};
+ function changeAccount(id){if(!cases().some(x=>x.id===id))return;current=id;decision='research';render();}
+ function handleClick(ev){
+  if(ev.target.closest('#apply-discovery')){const t=updateDraftFromFields();try{drafts[current]=appendScenarioEvidence(t,current);persisted();render();notify('Simulated buyer follow-up added as a separate source record. Earlier evidence remains visible.');}catch(err){notify(err.message);}return;}
+  if(ev.target.closest('#thesis-save')){const t=updateDraftFromFields();lastSaved=current;const a=account(),v=reviewThesis(a,t,decision);notify(`Account review saved. ${v.challenges} outstanding objection(s).`);render();return;}
+  if(ev.target.closest('#thesis-approve')){const t=updateDraftFromFields();const a=account(),v=reviewThesis(a,t,decision);if(!v.allowed){notify(v.requestReason||'Decision blocked.');render();return;}const notes={accountId:a.id,crmId:a.crmId,decision,recommendation:v.recommendation,at:new Date().toISOString(),synthetic:true};drafts[a.id]={...t,savedDecision:notes};persisted();lastSaved=current;render();notify('Account decision saved locally. No CRM record was changed.');return;}
+  if(ev.target.closest('#thesis-export')){const t=updateDraftFromFields();const a=account(),v=reviewThesis(a,t,decision);const content=makeBrief(a,t,decision,v),url=URL.createObjectURL(new Blob([content],{type:'text/markdown;charset=utf-8'}));const l=document.createElement('a');l.href=url;l.download=`Account_Review_${a.crmId}.md`;l.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Account review exported.');return;}
+  if(ev.target.closest('#thesis-reset')){delete drafts[current];persisted();decision='research';lastSaved=null;render();notify('Account review reset to the original sample record.');return;}
+ }
+ document.addEventListener('click',ev=>{if(!ev.target.closest('#page-thesis'))return;handleClick(ev)});
+ $('thesis-account-select').addEventListener('change',ev=>changeAccount(ev.target.value));
+ $('thesis-decision').addEventListener('change',ev=>{decision=ev.target.value;updateDraftFromFields();render();});
+ return {render,
+ getCase(id){const a=cases().find(x=>x.id===id);return a?{account:a,caseData:thesisFor(a,drafts[id]||{})}:null;},
+ addDemoFollowUp(id){const a=cases().find(x=>x.id===id);if(!a)throw Error('Unknown account');const currentCase=thesisFor(a,drafts[id]||{});const changed=appendScenarioEvidence(currentCase,id);drafts[id]=changed;persisted();render();return changed;},
+ openAccount(id){changeAccount(id);goPage('thesis')},reset(){drafts={};persisted();current='a2';decision='research';lastSaved=null;render()}};
+}
+
+
+
+
+function initJourney({getCase,addBuyerFollowup,openAccount,goPage,notify,escape,refresh}){
+ const $=id=>document.getElementById(id),e=escape;
+ const key='growthflow_v07_case_decisions';
+ const load=()=>{try{const v=JSON.parse(sessionStorage.getItem(key)||'{}');return v&&typeof v==='object'&&!Array.isArray(v)?v:{}}catch{return {}}};
+ let accountId='a2',decision='validate',comparison=false,results=load(),lastAssessment=null;
+ const fmtDate=s=>/^\d{4}-\d{2}-\d{2}$/.test(s||'')?new Date(s+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}):'Not recorded';
+ const asHtml=(s)=>e(s);
+ function current(){return getCase(accountId)}
+ function choiceLabel(c){return ACTIONS.find(x=>x.id===c)?.name||c}
+ // A saved decision is valid only for the exact reviewed account and case, not merely the evidence list.
+ // Include CRM-relevant account state and strategy edits to avoid showing outdated approvals.
+ function reviewFingerprint(account,caseData){
+  return JSON.stringify({
+   account:{id:account.id,crmId:account.crmId,stage:account.stage,status:account.status,
+     owner:account.owner,market:account.market,territory:account.territory,
+     eligible:account.assessment?.eligible,fit:account.assessment?.fit,
+     doNotContact:account.doNotContact,closed:account.closed,planningHold:account.planningHold},
+   strategy:{hypothesis:caseData.hypothesis,value:caseData.value,kill:caseData.kill,
+     stakeholders:caseData.stakeholders,questions:caseData.questions},
+   evidence:(caseData.evidence||[]).map(x=>[x.id,x.date,x.statement,x.stance,x.quality,x.resolutionOf,x.blocking,x.sourceRef])
+  });
+ }
+ function persist(){try{sessionStorage.setItem(key,JSON.stringify(results))}catch{notify('Session storage unavailable. Export a case summary to preserve your work.')}}
+ const bullet=(txt)=>`<div class="case-bullet"><span class="case-bullet-icon">✓</span><span>${asHtml(txt)}</span></div>`;
+ function render(){
+  if(!$('journey-account'))return;
+  const c=current();
+  if(!c){$('journey-empty').hidden=false;$('journey-cases').hidden=true;return;}
+  $('journey-empty').hidden=true;$('journey-cases').hidden=false;
+  const {account:a,caseData:t}=c,story=CASE_STORIES[a.id],model=commercialDecision(a,t),sales=model.commercial;
+  const hasFollowUp=model.hasNextScriptedEvent;
+  $('journey-account').innerHTML=CASE_IDS.filter(x=>getCase(x)).map(x=>`<option value="${e(x)}" ${x===accountId?'selected':''}>${e(getCase(x).account.name)}</option>`).join('');
+  $('journey-account-name').textContent=a.name;
+  $('journey-tagline').textContent=story.angle; $('journey-short-explanation').textContent=model.choice==='advance'?'Updated buyer evidence supports a limited validation step, not a guaranteed sale.':model.choice==='hold'?'A documented blocker means this account should not consume active pursuit capacity.':model.choice==='research'?'Customer fit alone does not prove a buyer need. Research comes before pursuit.':'A commercial question remains unresolved. Check the evidence before moving forward.';
+  $('journey-recommendation').textContent=model.title;
+  $('journey-recommendation').className='case-reco '+model.choice;
+  $('journey-head-details').innerHTML=[['CRM company',a.crmId],['CRM deal',sales.deal||'None opened'],['Account owner',a.owner],['CRM status',sales.status],['Last CRM activity',sales.last?fmtDate(sales.last):'None']].map(([k,v])=>`<div><small>${e(k)}</small><strong>${e(v)}</strong></div>`).join('');
+  $('journey-problem').textContent=story.challenge;
+  $('journey-goal').textContent=story.goal;
+  $('journey-hypothesis').textContent=t.hypothesis;
+  $('journey-proposition').textContent=t.value;
+  $('journey-metrics').innerHTML=[
+   ['Documented records',model.evidenceCount,'Chronological sources'],
+   ['Buyer signals',model.buyerEvidence,'Positive buyer records'],
+   ['Open objections',model.openChallenges,'Requires investigation'],
+   ['Fit',a.assessment.fit??'N/A','Score is not buyer intent']
+  ].map(([label,val,sub])=>`<div class="case-metric"><small>${e(label)}</small><strong>${e(val)}</strong><span>${e(sub)}</span></div>`).join('');
+  const audit=model.audit;
+  $('journey-source-assurance').innerHTML=`<div class="assurance-stat"><strong>${e(audit.validBuyerCount)}</strong><span>Current buyer-attributed records</span></div><div class="assurance-stat"><strong>${e(audit.assumptionsCount)}</strong><span>Unverified assumptions</span></div><div class="assurance-stat"><strong>${e(audit.invalidCount+audit.staleBuyerCount)}</strong><span>Integrity / freshness flags</span></div><p class="micro source-assurance-note">${e(audit.summary)}. All buyer records are simulated, not independently authenticated.</p>`;
+  $('journey-source-register').innerHTML=audit.records.map(r=>`<tr><td><code>${e(r.sourceRef)}</code></td><td>${e(r.kind)}</td><td>${e(r.date)}${r.ageDays!==null?` · ${e(r.ageDays)}d old`:''}</td><td><span class="audit-state ${r.errors.length?'is-error':r.stale?'is-stale':r.unverified?'is-assumption':'is-current'}">${e(r.assurance)}</span>${r.errors.length?`<small class="audit-warnings">${e(r.errors.join('; '))}</small>`:''}</td></tr>`).join('');
+  $('journey-evidence').innerHTML=model.events.map(x=>{
+    const status=x.resolved?'Resolved by later buyer record':x.resolutionOf?'Clarification linked to objection':x.blocking?'Material feasibility blocker':x.stance==='challenges'?'Open objection / gap':x.quality==='hypothesis'?'Unverified hypothesis':'Supporting record';
+    return `<div class="case-event ${x.resolved?'resolved':''} ${x.blocking?'blocked':''}"><span class="case-event-dot"></span><div class="case-event-body"><div class="case-event-meta"><b>${e(fmtDate(x.date))}</b><span>${e(x.category)}</span></div><div class="case-event-desc">${e(x.statement)}</div><div class="case-event-footer"><code>${e(x.ref)}</code><span>${e(status)}</span></div></div></div>`;
+  }).join('');
+  $('journey-buyers').innerHTML=t.stakeholders.map(x=>`<div class="case-person"><strong>${e(x[0])}</strong><span>${e(x[1])}</span><small>${e(x[2])}</small></div>`).join('');
+  $('journey-questions').innerHTML=t.questions.map(q=>`<li>${e(q)}</li>`).join('');
+  $('journey-decision-context').innerHTML=`<div class="case-reason">${e(model.reason)}</div>${model.blockers.length?`<p class="case-small-heading">What still needs checking</p>${model.blockers.map(bullet).join('')}`:'<div class="case-safe">No outstanding rule-based gate. Human approval and further qualification still apply.</div>'}`;
+  $('journey-next-step').textContent=hasFollowUp?story.next:story.after;
+  $('journey-event-control').innerHTML=hasFollowUp?`<button class="btn btn-primary" id="journey-apply-event">Record scripted buyer update</button><small>Replays a synthetic buyer event, preserving the previous records.</small>`:sales.deal||model.choice==='hold'?'<span class="case-event-complete">Current sample evidence fully loaded</span>':'<span class="case-event-complete">No scripted buyer event available</span>';
+  $('journey-decision').innerHTML=ACTIONS.map(x=>`<option value="${e(x.id)}" ${decision===x.id?'selected':''}>${e(x.name)}</option>`).join('');
+  const saved=results[a.id],isCurrent=Boolean(saved&&saved.fingerprint===reviewFingerprint(a,t)),selectionMatches=Boolean(isCurrent&&saved.choice===decision);
+  $('journey-status').innerHTML=saved?(isCurrent?(selectionMatches?`<div class="case-saved"><strong>Saved local review:</strong> ${e(choiceLabel(saved.choice))}<small>${e(saved.reason)}</small></div>`:`<div class="case-feedback cautious" role="status"><strong>Unsaved action change</strong><p>You selected a different action. Recheck and save it before the brief can be labeled as a saved review. The previous saved action was ${e(choiceLabel(saved.choice))}.</p></div>`):`<div class="case-feedback cautious" role="status"><strong>Review out of date</strong><p>Account information, strategy, or evidence has changed. Reassess and save a current recommendation.</p></div>`):'<p class="micro">No saved decision for this account. Evaluations are local to this browser session.</p>';
+  if(comparison&&hasFollowUp){const next=appendScenarioEvidence(t,accountId),future=commercialDecision(a,next);$('journey-compare').innerHTML=`<div class="case-before-after"><div><small>Current records</small><strong>${e(model.title)}</strong><p>${e(model.reason)}</p></div><div><small>Hypothetical later buyer update</small><strong>${e(future.title)}</strong><p>${e(future.reason)}</p></div></div><p class="micro">Preview only. No evidence is changed until you explicitly record the scripted update.</p>`;}
+  else if(comparison){$('journey-compare').innerHTML='<p class="micro">The sample buyer update has already been recorded, or this account has no scripted update.</p>';}
+  else $('journey-compare').innerHTML='';
+  if(lastAssessment){$('journey-feedback').innerHTML=`<div class="case-feedback ${lastAssessment.allowed?(lastAssessment.aligned?'aligned':'cautious'):'blocked'}"><strong>${lastAssessment.allowed?(lastAssessment.aligned?'Evidence-aligned decision':'Permissible, but needs a justification'):'Decision blocked'}</strong><p>${e(lastAssessment.reason)}</p></div>`;}
+  else $('journey-feedback').innerHTML='';
+  $('journey-store').disabled=!(lastAssessment&&lastAssessment.allowed);
+ }
+ function showCase(id){if(!CASE_IDS.includes(id))return;accountId=id;const c=current();decision=c?commercialDecision(c.account,c.caseData).choice:'research';comparison=false;lastAssessment=null;$('journey-rationale').value='';render()}
+ function assess(){const {account:a,caseData:t}=current();lastAssessment=assessChoice(a,t,decision);render();return lastAssessment}
+ function record(){const {caseData:t}=current();const val=assess();if(!val.allowed){notify('This decision cannot be saved as an active pursuit.');return;}const note=$('journey-rationale').value.trim();if(!val.aligned&&note.length<20){notify('For a departure from the recommendation, explain the trade-off in at least 20 characters.');$('journey-rationale').focus();return;}results[accountId]={choice:decision,reason:note||val.reason,fingerprint:reviewFingerprint(current().account,t),at:new Date().toISOString(),synthetic:true,assessment:val.recommended};persist();render();notify('Commercial decision documented locally. No CRM record changed.');}
+ function exportSummary(){const {account:a,caseData:t}=current(),val=assessChoice(a,t,decision);const saved=results[accountId],isCurrent=Boolean(saved&&saved.fingerprint===reviewFingerprint(a,t)&&saved.choice===decision);const note=isCurrent?saved.reason:$('journey-rationale').value.trim();const content=makeCaseSummary(a,t,decision,val,note,isCurrent);const url=URL.createObjectURL(new Blob([content],{type:'text/markdown;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download=`Commercial_Case_${a.crmId}.md`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Evidence-backed commercial case exported.');}
+ document.addEventListener('click',ev=>{
+  if(!ev.target.closest('#page-journey'))return;
+  if(ev.target.closest('#journey-apply-event')){addBuyerFollowup(accountId);comparison=false;const c=current();decision=c?commercialDecision(c.account,c.caseData).choice:decision;lastAssessment=null;render();refresh();notify('Synthetic buyer update recorded; underlying Account Review evidence updated.');return;}
+  if(ev.target.closest('#journey-preview')){comparison=!comparison;render();return;}
+  if(ev.target.closest('#journey-assess')){assess();notify('Commercial decision evaluated against the available evidence.');return;}
+  if(ev.target.closest('#journey-store')){record();return;}
+  if(ev.target.closest('#journey-export')){exportSummary();return;}
+  if(ev.target.closest('#journey-account-review')){openAccount(accountId);return;}
+  if(ev.target.closest('#journey-open-planner')){goPage('planner');return;}
+ });
+ $('journey-account').addEventListener('change',ev=>showCase(ev.target.value));
+ $('journey-decision').addEventListener('change',ev=>{decision=ev.target.value;lastAssessment=null;render();});
+ return {render,reset(){results={};persist();accountId='a2';decision='validate';comparison=false;lastAssessment=null;render();},openCase(id){showCase(id);goPage('journey')}};
+}
+
+
+
+
+
+
+
+
+
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const dateFmt=iso=>/^\d{4}-\d{2}-\d{2}$/.test(iso||'')?new Date(iso+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'}):'Not set';
+const tierName=t=>({P1:'P1 · Progress',P2:'P2 · Qualify',P3:'P3 · Research',Review:'Review',Exclude:'Restricted',Archived:'Closed'})[t]||t;
+const tc=t=>(t==='P1'?'p1':t==='P2'?'p2':t==='P3'?'p3':t==='Archived'?'archived':t==='Exclude'?'exclude':'review');
+const init=dedupeAccounts(rawAccounts);
+let focusReturn=null;
+// Optional progressive disclosure for first-time reviewers; full professional screens remain accessible.
+let quickMode=false,quickStep='context';
+const quickSteps=['context','evidence','decision'];
+function setQuickMode(enabled,step='context',moveFocus=false){
+ quickMode=Boolean(enabled);quickStep=quickSteps.includes(step)?step:'context';
+ const section=document.getElementById('page-journey');
+ section.classList.toggle('quick-mode',quickMode);
+ document.getElementById('quick-mode-bar').hidden=!quickMode;
+ document.getElementById('quick-bottom').hidden=!quickMode;
+ [...document.querySelector('#journey-cases').children].forEach((child,index)=>{
+   const group=index<=4?'context':index===5?'evidence':index===6?'decision':'all';
+   child.dataset.quickStep=group;
+   child.dataset.currentStep=String(group===quickStep||group==='all');
+ });
+ document.querySelectorAll('.case-step-btn').forEach(button=>{
+  const active=button.dataset.caseStep===quickStep;
+  button.classList.toggle('active',active);
+  if(active)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');
+ });
+ const pos=quickSteps.indexOf(quickStep);
+ document.getElementById('quick-back').disabled=pos===0;
+ document.getElementById('quick-next').hidden=pos===2;
+ document.getElementById('quick-next').textContent=pos===0?'Next: Investigate →':'Next: Decide →';
+ document.getElementById('quick-progress').textContent=`Step ${pos+1} of 3`;
+ if(moveFocus){
+  const el=document.getElementById(({context:'case-context',evidence:'case-evidence',decision:'case-decision'})[quickStep]);
+  if(el){el.tabIndex=-1;el.focus({preventScroll:true});el.scrollIntoView({block:'start',behavior:'instant'});}
+ }
+}
+
+const state={accounts:init.accounts,duplicates:init.duplicates,page:'overview',capacity:12,strategy:'pipeline',effortMode:'baseline',filter:'all',query:'',selectedId:null,history:loadHistory(),tour:0,source:'Sample commercial records',syncAt:'2026-10-26 09:00 UTC',connectorPreview:null};
+function loadHistory(){try{const j=JSON.parse(sessionStorage.getItem('growthflow_v06_history')||'[]');return Array.isArray(j)?j:[];}catch{return [];}}
+function storeHistory(){try{sessionStorage.setItem('growthflow_v06_history',JSON.stringify(state.history));}catch{}}
+function toast(s){const e=$('toast');e.textContent=s;e.classList.add('open');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('open'),3600);}
+function unadjustedRows(){return evaluatedAccounts(state.accounts,DEMO_DATE);}
+// Synthetic scripted buyer updates influence downstream coverage planning, but do not overwrite CRM fields.
+function planningAccounts(){return state.accounts.map(a=>{const record=thesis.getCase(a.id);if(!record)return a;
+ const opinion=commercialDecision(record.account,record.caseData);
+ if(opinion.materialBlock||opinion.audit.invalidCount||opinion.audit.staleBuyerCount)return {...a,planningHold:true};
+ if(a.id==='a2'&&opinion.choice==='advance')return {...a,action:'Confirm validation workshop and decision process (demo)'};
+ return a;
+ });}
+function rows(){return evaluatedAccounts(planningAccounts(),DEMO_DATE);}
+function plan(){return makePlan(planningAccounts(),{capacity:state.capacity,strategy:state.strategy,now:DEMO_DATE,effortMode:state.effortMode});}
+function page(n,{moveFocus=false}={}){if(!['overview','accounts','thesis','journey','planner','history','bridge'].includes(n))return;state.page=n;document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+n));document.querySelectorAll('[data-page]').forEach(x=>{if(x.classList.contains('navbtn'))x.classList.toggle('active',x.dataset.page===n)});if(['thesis','history','bridge'].includes(n))$('nav-more').open=true;document.querySelectorAll('.navbtn[data-page]').forEach(b=>{if(b.dataset.page===n){b.setAttribute('aria-current','page')}else{b.removeAttribute('aria-current')}});$('breadcrumb').textContent='Workspace / '+({overview:'Home',accounts:'Target Accounts',thesis:'Detailed Review',journey:'Develop an Account',planner:'Weekly Plan',history:'Saved Plans',bridge:'CRM & Data Sources'})[n];render();window.scrollTo(0,0);if(moveFocus){const heading=document.querySelector('#page-'+n+' h1');if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}}}
+function badge(t){return `<span class="badge ${tc(t)}">${esc(tierName(t))}</span>`;}
+function metric(label,value,note){return `<div class="card metric"><div class="metric-label">${esc(label)}</div><div class="metric-value">${esc(value)}</div><div class="metric-note">${esc(note)}</div></div>`;}
+function renderOverview(){const a=rows(),p=plan();const valid=a.filter(x=>x.assessment.eligible);const review=a.filter(x=>x.assessment.tier==='Review');const urgent=a.filter(x=>x.assessment.tier==='P1');
+ $('metrics').innerHTML=[metric('Eligible accounts',valid.length,`${a.length} unique CRM-linked sample records`),metric('Time-sensitive P1',urgent.length,'Buyer need and planned next action'),metric('Evidence gaps',review.length,'Need research or records refresh'),metric('Planned hours',`${p.used}/${p.capacity}h`,p.conflict?'P1 capacity escalation required':'Current plan allocation')].join('');
+ $('overview-accounts').innerHTML=valid.slice(0,5).map(x=>`<tr class="data-row"><td><button class="table-account-link" data-open="${esc(x.id)}" aria-label="Open account ${esc(x.name)}"><strong>${esc(x.name)}</strong><span class="micro">${esc(x.sector)}</span></button></td><td>${x.assessment.fit===null?'N/A':x.assessment.fit+'/100'}</td><td>${badge(x.assessment.tier)}</td><td>${x.hours}h</td></tr>`).join('');
+ const alerts=[{h:p.conflict?'Urgent work exceeds capacity':`${p.urgentCount} protected P1 commitments`,d:p.conflict?`${p.urgentHours}h of P1 work requested; escalate uncovered commitments.`:'Confirmed buyer needs are scheduled before research work.'},{h:`${review.length} research and freshness reviews`,d:'Unknown rubric dimensions and stale CRM snapshots block automatic prioritization.'},{h:`${state.duplicates} duplicate record suppressed`,d:'CRM record ID deduplication prevents double counting.'},{h:'Rules, not AI predictions',d:'Scores describe customer fit, not probability of closing a sale.'}];
+ $('overview-insights').innerHTML=alerts.map((s,i)=>`<div class="insight"><div class="insight-icon">${['!','?','≡','i'][i]}</div><div><div class="insight-title">${esc(s.h)}</div><div class="insight-copy">${esc(s.d)}</div></div></div>`).join('');
+ $('source-label').textContent=state.source;
+ $('snapshot-status').textContent=`Assessment rules ${MODEL_VERSION} · data as-of ${DEMO_DATE}`;
+}
+function renderAccounts(){const a=rows().filter(x=>(state.filter==='all'||x.assessment.tier===state.filter) && `${x.name} ${x.sector} ${x.market}`.toLowerCase().includes(state.query.toLowerCase()));
+ $('account-count').textContent=`${a.length} of ${state.accounts.length} unique accounts`;
+ $('accounts-list').innerHTML=a.length?a.map(x=>`<button class="account-row" data-open="${esc(x.id)}" aria-label="Inspect ${esc(x.name)}"><span class="acct-avatar">${esc(x.name.split(/\s+/).slice(0,2).map(y=>y[0]).join('').toUpperCase())}</span><span class="account-primary"><strong>${esc(x.name)} ${x.scenarioModified?'<span class="badge review">WHAT-IF</span>':''}</strong><span class="tiny">${esc(x.sector)} · ${esc(x.market)} · ${Number.isFinite(x.employees)?x.employees+' employees':'size unknown'}</span></span><span class="account-meta">${badge(x.assessment.tier)}<span class="tiny">${x.assessment.fit??'Unknown'} fit · ${x.assessment.coverage}% coverage</span></span><span aria-hidden="true">›</span></button>`).join(''):'<div class="card empty">No accounts match your search or filter.</div>';
+}
+function action(a,selected,reason='',effortMode='baseline'){return `<button class="plan-item plan-button" data-open="${esc(a.id)}"><span class="plan-circle ${selected?'':'deferred'}">${selected?'✓':'·'}</span><span class="plan-item-body"><strong>${esc(a.name)} ${badge(a.assessment.tier)}</strong><span>${esc(a.action)} · due ${dateFmt(a.due)}</span>${reason?`<small>${esc(reason)}</small>`:''}</span><strong class="plan-item-hours">${estimatedHours(a,effortMode)}h${effortMode==='buffered'?'<small>incl. buffer</small>':''}</strong></button>`;}
+function renderPlanner(){const p=plan();$('capacity-value').textContent=state.capacity;$('capacity-range').value=state.capacity;$('strategy-explanation').textContent=p.explanation;$('hours-assigned').textContent=`${p.used} of ${p.capacity} hours`;$('hours-left').textContent=p.unused+' hours';$('urgent-hours').textContent=`${p.urgentHours}h across ${p.urgentCount} accounts`;$('chosen-count').textContent=p.selected.length+' ACTIONS';$('capacity-progress').style.width=(p.capacity?Math.round(p.used/p.capacity*100):0)+'%';
+ $('selected-actions').innerHTML=p.selected.length?p.selected.map(a=>action(a,true,'Scheduled under this planning policy.',state.effortMode)).join(''):'<p class="tiny">No activities scheduled at current capacity.</p>';
+ $('deferred-actions').innerHTML=p.deferred.length?p.deferred.map(a=>action(a,false,p.reasons[a.id],state.effortMode)).join(''):'<p class="tiny">No eligible actions deferred.</p>';
+ $('conflict-box').innerHTML=p.conflict?`<div class="warning" role="alert"><strong>Manager escalation required.</strong><br>Urgent tasks require ${p.urgentHours}h, but only ${p.capacity}h is available. ${p.uncoveredUrgent.map(a=>esc(a.name)).join(', ')} ${p.uncoveredUrgent.length===1?'is':'are'} not scheduled. Review scope, deadlines or staffing; lower priorities remain deferred.</div>`:'<div class="note-box">P1 obligations fit the proposed allocation. Remaining capacity follows the selected planning policy.</div>';
+ document.querySelectorAll('[data-strategy]').forEach(b=>{b.classList.toggle('active',b.dataset.strategy===state.strategy);b.setAttribute('aria-pressed',String(b.dataset.strategy===state.strategy));});
+ document.querySelectorAll('[data-effort]').forEach(b=>{b.classList.toggle('active',b.dataset.effort===state.effortMode);b.setAttribute('aria-pressed',String(b.dataset.effort===state.effortMode));});
+ const comparisons=compareStrategies(planningAccounts(),state.capacity,DEMO_DATE,state.effortMode);$('comparison').innerHTML=Object.entries(comparisons).map(([key,val])=>`<div class="compare-card ${key===state.strategy?'chosen':''}"><div class="compare-label">${key==='pipeline'?'Pipeline first':'Reserve research'} ${key===state.strategy?'✓':''}</div><div class="compare-number">${val.selected.length} <span class="tiny">activities · ${val.used}h</span></div><div class="compare-note">${val.selected.filter(a=>a.assessment.tier==='P1').length} active · ${val.selected.filter(a=>a.assessment.tier==='P2').length} warm · ${val.selected.filter(a=>a.assessment.tier==='P3').length} research${val.conflict?' · conflict':''}</div></div>`).join('');
+ const a=comparisons.pipeline.selected.map(x=>x.id),b=comparisons.balanced.selected.map(x=>x.id);
+ $('strategy-delta').textContent=a.join('|')===b.join('|')?'Both policies choose the same actions at this capacity. That is a valid result, not a missing feature.':`Reserve research adds ${comparisons.balanced.selected.filter(x=>!a.includes(x.id)).map(x=>x.name).join(', ')||'no accounts'} and defers ${comparisons.pipeline.selected.filter(x=>!b.includes(x.id)).map(x=>x.name).join(', ')||'none'} compared with Pipeline first.`;
+ const basePlan=makePlan(state.accounts,{capacity:state.capacity,strategy:state.strategy,now:DEMO_DATE,effortMode:'baseline'});
+ const bufferPlan=makePlan(state.accounts,{capacity:state.capacity,strategy:state.strategy,now:DEMO_DATE,effortMode:'buffered'});
+ const lost=basePlan.selected.filter(x=>!bufferPlan.selected.some(y=>y.id===x.id));
+ $('stress-test').innerHTML=`<div class="stress-card"><div class="micro">EXPECTED EFFORT</div><strong>${basePlan.used}h</strong><span>${basePlan.selected.length} actions · ${basePlan.conflict?'urgent conflict':'no urgent conflict'}</span></div><div class="stress-card"><div class="micro">WITH CONTINGENCY</div><strong>${bufferPlan.used}h</strong><span>${bufferPlan.selected.length} actions · ${bufferPlan.conflict?'urgent conflict':'no urgent conflict'}</span></div>`;
+ $('stress-explanation').textContent=bufferPlan.conflict&&!basePlan.conflict?`Fragile plan: urgent commitments fit at expected effort but not with a buffer. Escalate before promising deadlines.`:lost.length?`${lost.map(x=>x.name).join(', ')} ${lost.length===1?'is':'are'} deferred when effort increases. Confirm time estimates before committing.`:'The selected work still fits when each action is given a 25% buffer. This is a stress test, not a guarantee.';
+ if(p.deadlineRisks.length){$('stress-explanation').textContent+=' Overdue in this scenario: '+p.deadlineRisks.map(x=>x.name).join(', ')+'.';}
+
+}
+function renderHistory(){let items=state.history;$('history-list').innerHTML=items.length?items.map((x,i)=>`<div class="logitem"><div class="log-head"><div><strong>${esc(x.policy)} · ${x.used}/${x.capacity}h</strong><div class="micro">${esc(x.at)} · ${esc(x.id)} · ${esc(x.version)} · ${esc(x.effortMode||'baseline')} effort</div></div>${x.conflict?'<span class="badge p1">CONFLICT</span>':'<span class="badge p3">DRAFT</span>'}</div><p><strong>Scheduled:</strong> ${x.selected.map(esc).join(', ')||'None'}</p><p><strong>Deferred:</strong> ${x.deferred.map(esc).join(', ')||'None'}</p><p class="micro">${esc(x.notes)}</p></div>`).join(''):'<div class="card empty"><strong>No saved planning decisions yet.</strong><p>Open Planning Studio, compare alternatives and save a draft. Nothing is written back to a CRM.</p><button class="btn btn-primary" data-page="planner">Open planner</button></div>';
+}
+function fmtSource(dim){const src=dim.source;return src?`<div class="evidence-link"><strong>${esc(src.id)}</strong> · ${esc(src.kind)} · ${esc(src.date)}<p>${esc(src.claim)}</p></div>`:'<div class="research-gap">No linked evidence. Treat this dimension as unknown.</div>';}
+function drawer(){const a=rows().find(x=>x.id===state.selectedId);if(!a)return;const f=a.assessment;$('drawer-title').textContent=a.name;$('drawer-subtitle').textContent=`${a.crmId} · ${a.sector} · ${a.market}`;
+ $('drawer-body').innerHTML=`<div class="drawer-facts"><div class="fact"><div class="micro">Recommended priority</div>${badge(f.tier)}</div><div class="fact"><div class="micro">Customer fit</div><strong>${f.fit===null?'Unknown':f.fit+'/100'}</strong></div><div class="fact"><div class="micro">Evidence coverage</div><strong>${f.coverage}%</strong></div><div class="fact"><div class="micro">Action estimate</div><strong>${a.hours}h</strong></div></div>${a.scenarioModified?'<div class="warning mt18"><strong>Hypothetical scenario.</strong> Modified fields are planning assumptions, not new CRM events.</div>':''}<h3>Why this recommendation?</h3><div class="note-box"><strong>${esc(f.reason)}</strong><br><span class="micro">Analyst context: ${esc(a.note)}</span></div><h3>Evidence-linked fit assessment</h3><p class="micro">Each dimension uses 0–4 anchored evidence levels. Points = weight × level ÷ 4. Unverified or absent links count as unknown, not zero. ${f.isProvisional?'The overall fit is provisional.':''}</p>${f.dimensions.map(d=>`<div class="evidence-card"><div class="dimhead"><strong>${esc(d.label)}</strong><strong>${d.score===null?'Unknown':d.score+'/'+d.max}</strong></div><div class="dimtrack"><div class="dimfill" style="width:${d.level===null?0:d.level*25}%"></div></div><div class="micro">${d.level===null?'Missing evidence':esc(d.level+' / 4 · '+d.levels[d.level])}</div>${fmtSource(d)}</div>`).join('')}<h3>Buyer evidence and notes</h3>${a.evidence.filter(e=>!f.dimensions.some(d=>d.source?.id===e.id)).map(e=>`<div class="evidence"><strong>${esc(e.kind)}</strong><p>${esc(e.claim)}</p><div class="micro">${esc(e.id)} · ${esc(e.date)} · Synthetic test record</div></div>`).join('')||'<p class="micro">No additional buyer evidence is recorded.</p>'}<h3>Next commercial step</h3><div class="note-box"><strong>${esc(a.action)}</strong><br>${dateFmt(a.due)} · ${esc(a.owner)} · ${a.hours}h</div>
+ <h3>Test a business assumption</h3><div class="whatif"><p class="micro">Adjust exactly one fit dimension or the buying stage, then explain the reason. Modifications stay local to this demo. All restrictions remain enforced.</p><div class="fields"><div><label for="stage-input">Buyer-stage assumption</label><select class="input-select" id="stage-input">${[['none','No engagement'],['replied','Buyer replied'],['discovery','Confirmed discovery'],['evaluation','Active evaluation']].map(([v,t])=>`<option value="${v}" ${a.stage===v?'selected':''}>${t}</option>`).join('')}</select></div><div><label for="hours-input">Action effort (hours)</label><input class="input" id="hours-input" type="number" min="0.5" max="24" step="0.5" value="${a.hours}"></div><div><label for="dimension-input">Scoring dimension</label><select class="input-select" id="dimension-input"><option value="none">Do not change</option>${RUBRIC.map(d=>`<option value="${d.key}">${esc(d.label)}</option>`).join('')}</select></div><div><label for="level-input">Evidence level</label><select class="input-select" id="level-input"><option value="unknown">Unknown / missing</option>${[0,1,2,3,4].map(v=>`<option value="${v}">${v} of 4</option>`).join('')}</select></div></div><label for="reason-input">Reason for scenario change</label><textarea class="input reason-input" id="reason-input" rows="2" maxlength="300" placeholder="Example: Assume a discovery call confirmed ERP handoff delays."></textarea><button class="btn btn-dark" id="apply-whatif">Apply hypothetical change</button></div>`;
+}
+function renderCrmPreview(){const key=$('crm-preview-select').value;const raw=CRM_EXAMPLES[key]||CRM_EXAMPLES['company-deal'];const mapped=interpretCrmSnapshot(raw);$('crm-preview-raw').textContent=JSON.stringify(raw,null,2);$('crm-preview-mapped').innerHTML=[['Company name',mapped.name],['CRM company ID',mapped.crmId],['Country',mapped.country],['Employee count',mapped.employees??'Unknown'],['Linked deal records',mapped.linkedDealCount],['Linked note records',mapped.linkedNoteCount],['Note IDs (metadata only)',mapped.noteIds.join(', ')||'None'],['Deal IDs',mapped.dealIds.join(', ')||'None'],['Raw deal stage codes',mapped.dealStages.join(', ')||'None'],['Buyer need verified?', 'Not by this import'],['Contact permission',mapped.contactPermission],['GrowthFlow starting decision',mapped.decision]].map(([l,v])=>`<div class="crm-fact"><span>${esc(l)}</span><strong>${esc(v)}</strong></div>`).join('')+`<div class="crm-caution">${esc(mapped.dealCaution)} ${esc(mapped.noteCaution)}</div>`;}
+function renderBridge(){renderCrmPreview();$('data-lineage').innerHTML=DATA_LINEAGE.map(s=>`<tr><td><strong>${esc(s.field)}</strong></td><td>${esc(s.system)}</td><td>${esc(s.workflow)}</td><td>${esc(s.owner)}</td></tr>`).join('');$('bridge-source').textContent=state.source;$('bridge-time').textContent=state.syncAt;$('bridge-count').textContent=state.accounts.length;$('bridge-warning').textContent='The recruiter workspace always uses synthetic records. Private CRM validation stays separate and never changes this commercial case.';const preview=$('connector-preview');preview.hidden=!state.connectorPreview;if(state.connectorPreview){const q=state.connectorPreview;preview.textContent=`Private test snapshot inspected: ${q.accounts} companies, ${q.deals} associated deals, ${q.notes} note metadata records. ${q.unknownCountries} companies have unmapped country values. Snapshot: ${q.syncedAt}. No buyer intent was inferred, no CRM edits were made, and the synthetic recruiter demo remains unchanged.`;}}
+function render(){renderOverview();renderAccounts();renderPlanner();renderHistory();renderBridge();thesis?.render();journey?.render();if(state.selectedId)drawer();}
+function openDrawer(id){focusReturn=document.activeElement;state.selectedId=id;drawer();$('drawer-wrap').classList.add('open');$('drawer-wrap').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';$('drawer-close').focus();}
+function closeDrawer(){const hadDialog=Boolean(state.selectedId);state.selectedId=null;$('drawer-wrap').classList.remove('open');$('drawer-wrap').setAttribute('aria-hidden','true');document.body.style.overflow='';if(hadDialog&&focusReturn&&focusReturn.isConnected&&typeof focusReturn.focus==='function')focusReturn.focus({preventScroll:true});focusReturn=null;}
+function scenario(){const id=state.selectedId;const reason=$('reason-input').value.trim();const levelInput=$('level-input').value,dimension=$('dimension-input').value;
+ try{state.accounts=simulateAccountChange(state.accounts,id,{hours:Number($('hours-input').value),stage:$('stage-input').value,confirmedNeed:['discovery','evaluation'].includes($('stage-input').value),...(dimension==='none'?{}:{dimension,level:levelInput==='unknown'?null:Number(levelInput)}),reason});render();toast('Scenario recalculated. Changes are hypothetical, not CRM data.');}catch(e){toast(e.message);$('reason-input').focus();}}
+function savePlan(){const p=plan();state.history.unshift({id:'GF-'+String(Date.now()).slice(-7),at:new Date().toLocaleString('en-GB'),policy:p.strategy==='pipeline'?'Pipeline first':'Reserve research',effortMode:p.effortMode,capacity:p.capacity,used:p.used,conflict:p.conflict,version:MODEL_VERSION,selected:p.selected.map(a=>a.name),deferred:p.deferred.map(a=>a.name),notes:`${p.explanation} ${state.accounts.filter(a=>a.scenarioModified).length} hypothetical account change(s).`});state.history=state.history.slice(0,50);storeHistory();page('history');toast('Planning draft saved to browser session only.');}
+function exportPlan(){const p=plan();const exportObj={application:'GrowthFlow',modelVersion:MODEL_VERSION,asOf:DEMO_DATE,synthetic:!state.source.includes('HubSpot'),source:state.source,planningPolicy:p.strategy,effortMode:p.effortMode,effortPolicy:p.effortMode==='buffered'?'Each activity +25%, rounded up to 0.5 hour':'Expected effort from synthetic data',capacityHours:p.capacity,scheduled:p.selected.map(a=>({crmId:a.crmId,account:a.name,priority:a.assessment.tier,action:a.action,estimatedHours:a.hours,allocatedHours:p.plannedHours[a.id],fit:a.assessment.fit,coverage:a.assessment.coverage})),deferred:p.deferred.map(a=>({crmId:a.crmId,account:a.name,reason:p.reasons[a.id],allocatedHours:p.plannedHours[a.id]})),conflict:p.conflict,disclaimer:'Decision-support demonstration only; not a probability or revenue forecast and no CRM write-back.'};const data=new Blob([JSON.stringify(exportObj,null,2)],{type:'application/json'});const url=URL.createObjectURL(data);const link=document.createElement('a');link.href=url;link.download='GrowthFlow_Coverage_Plan.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('Scenario JSON exported.');}
+const tourSlides=[
+ {title:'Start with the customer problem.',text:'Northline reports handoff delays, but IT says some workflows are already automated. Read the commercial context, then inspect the evidence.',page:'journey',step:'context'},
+ {title:'Challenge the initial assumptions.',text:'Choose “Preview buyer follow-up,” then record the scripted clarification. Notice that the original ERP objection remains visible.',page:'journey',step:'evidence'},
+ {title:'Make and defend a decision.',text:'Check the updated recommendation, evaluate a commercial action, and export an evidence-backed case brief. The weekly plan reflects the latest evidence.',page:'journey',step:'decision'}
+];
+function showTour(){let x=tourSlides[state.tour];page(x.page);setQuickMode(true,x.step,true);if(x.account)openDrawer(x.account);else closeDrawer();const t=$('tour');t.hidden=false;t.innerHTML=`<div class="tour-title">STEP ${state.tour+1} OF ${tourSlides.length} · QUICK TOUR</div><strong>${esc(x.title)}</strong><p>${esc(x.text)}</p><div class="tour-controls"><button class="btn" id="end-tour">Close tour</button><button class="btn btn-primary" id="next-tour">${state.tour===tourSlides.length-1?'Finish':'Next step →'}</button></div>`;}
+function reset(){state.accounts=dedupeAccounts(rawAccounts).accounts;state.duplicates=init.duplicates;state.source='Sample commercial records';state.syncAt='2026-10-26 09:00 UTC';state.effortMode='baseline';state.selectedId=null;closeDrawer();thesis.reset();journey.reset();render();toast('Restored original synthetic scenario.');}
+async function fetchBridge(){
+ const b=$('sync-button');b.disabled=true;b.textContent='Checking private test snapshot...';
+ try{
+  const response=await fetch('/api/crm/snapshot',{cache:'no-store'});
+  const payload=await response.json();
+  if(!response.ok)throw Error(payload.error||'The connector is unavailable');
+  if(!Array.isArray(payload.accounts))throw Error('Invalid connector response');
+  if(payload.mode==='demo')throw Error('Server is in demo mode. No authenticated HubSpot snapshot was fetched.');
+  if(payload.mode!=='hubspot')throw Error('Unknown source mode. The preview was not accepted.');
+  const records=dedupeAccounts(payload.accounts).accounts;
+  state.connectorPreview={accounts:records.length,
+   deals:records.reduce((sum,a)=>sum+(Array.isArray(a.crmDeals)?a.crmDeals.length:0),0),
+   notes:records.reduce((sum,a)=>sum+(Array.isArray(a.crmNotes)?a.crmNotes.length:0),0),
+   unknownCountries:records.filter(a=>!['DE','NL','CH'].includes(a.country)).length,
+   syncedAt:String(payload.syncedAt||'not supplied')};
+  // Do not overwrite the fictional case database: unqualified CRM snapshots lack
+  // buyer evidence and cannot safely enter account-development decisions.
+  renderBridge();toast('Private CRM snapshot inspected. Fictional account data remains unchanged.');
+ }catch(e){toast(e.message+' Fictional demo retained.');}
+ finally{b.disabled=false;b.textContent='Validate private CRM snapshot';}
+}
+document.addEventListener('click',e=>{
+ if(e.target.closest('[data-quick-start]')){page('journey',{moveFocus:true});setQuickMode(true,'context',true);return;}
+ if(e.target.closest('#quick-exit')){setQuickMode(false,'context');document.getElementById('page-journey').querySelector('h1').focus({preventScroll:true});window.scrollTo(0,0);return;}
+ if(e.target.closest('#quick-next')||e.target.closest('#quick-back')){
+  const offset=e.target.closest('#quick-next')?1:-1;
+  setQuickMode(true,quickSteps[Math.max(0,Math.min(2,quickSteps.indexOf(quickStep)+offset))],true);return;
+ }
+ const step=e.target.closest('[data-case-step]');if(step){const id=({context:'case-context',evidence:'case-evidence',decision:'case-decision'})[step.dataset.caseStep];if(id){if(state.page!=='journey')page('journey');if(quickMode)setQuickMode(true,step.dataset.caseStep,true);else{document.querySelectorAll('.case-step-btn').forEach(b=>{const active=b.dataset.caseStep===step.dataset.caseStep;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});document.getElementById(id).scrollIntoView({behavior:'auto',block:'start'});}}return;}const o=e.target.closest('[data-open]');if(o){openDrawer(o.dataset.open);return;}const n=e.target.closest('[data-page]');if(n){$('tour').hidden=true; if(n.dataset.page==='journey')setQuickMode(false);page(n.dataset.page,{moveFocus:true});return;}const st=e.target.closest('[data-strategy]');if(st){state.strategy=st.dataset.strategy;render();return;}const ef=e.target.closest('[data-effort]');if(ef){state.effortMode=ef.dataset.effort;render();return;}
+ if(e.target.closest('#drawer-close')||e.target.closest('#drawer-veil')){closeDrawer();return;}
+ if(e.target.closest('#apply-whatif')){scenario();return;}
+ if(e.target.closest('#reset-btn')||e.target.closest('#reset-demo')){reset();return;}
+ if(e.target.closest('#save-plan')){savePlan();return;}
+ if(e.target.closest('#export-plan')){exportPlan();return;}
+ if(e.target.closest('#clear-history')){state.history=[];storeHistory();renderHistory();toast('Session drafts cleared.');return;}
+ if(e.target.closest('#start-tour')){state.tour=0;showTour();return;}
+ if(e.target.closest('#next-tour')){if(state.tour===tourSlides.length-1){$('tour').hidden=true;closeDrawer();setQuickMode(false);page('overview');toast('Tour complete.');}else{state.tour++;showTour();}return;}
+ if(e.target.closest('#end-tour')){$('tour').hidden=true;closeDrawer();setQuickMode(false);page('overview',{moveFocus:true});return;}
+ if(e.target.closest('#sync-button')){fetchBridge();return;}
+});
+$('crm-preview-select').addEventListener('change',renderCrmPreview);
+$('capacity-range').addEventListener('input',e=>{state.capacity=Number(e.target.value);render();});
+$('search-input').addEventListener('input',e=>{state.query=e.target.value;renderAccounts();});
+$('tier-filter').addEventListener('change',e=>{state.filter=e.target.value;renderAccounts();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(state.selectedId)closeDrawer();else if(!$('tour').hidden){$('tour').hidden=true;$('start-tour').focus();}}if(e.key==='Tab'&&state.selectedId){const dialog=document.querySelector('.drawer');const nodes=[...dialog.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),a[href]')].filter(x=>x.getClientRects().length);const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+const thesis=initThesis({getAccounts:unadjustedRows,notify:toast,escape:esc,goPage:page});
+const journey=initJourney({getCase:id=>thesis.getCase(id),addBuyerFollowup:id=>thesis.addDemoFollowUp(id),openAccount:id=>thesis.openAccount(id),goPage:page,notify:toast,escape:esc,refresh:()=>render()});
+const issues=validateDataset(state.accounts);if(issues.length){console.error('GrowthFlow fixture validation:',issues);toast('Data validation warnings. See console.');}
+render();setQuickMode(false);document.querySelector('.navbtn[data-page="overview"]')?.setAttribute('aria-current','page');
+const isLocalConnector = ['127.0.0.1','localhost'].includes(window.location.hostname) && ['http:','https:'].includes(window.location.protocol);
+if(isLocalConnector){const button=$('sync-button');button.disabled=false;button.textContent='Validate private CRM snapshot';}
+
+</script></body></html>
