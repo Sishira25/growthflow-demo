@@ -4,7 +4,7 @@ services:
   - type: web
     name: growthflow-portfolio-demo
     runtime: static
-    buildCommand: echo "GrowthFlow v1.4 public reviewer preview is prebuilt"
+    buildCommand: echo "GrowthFlow v1.5 commercial workspace is prebuilt"
     staticPublishPath: .
     autoDeployTrigger: commit
     headers:
